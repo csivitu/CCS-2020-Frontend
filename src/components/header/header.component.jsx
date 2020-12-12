@@ -1,5 +1,6 @@
 import React from 'react';
+import { Row } from 'react-bootstrap';
 
-const Header = () => <div className="navbar-div" />;
+const Header = () => <Row className="navbar-div" />;
 
 export default Header;

@@ -1,0 +1,28 @@
+html,body {
+	font-size: 62.5%; /*10px*/
+	height: 100vh;
+
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.content{
+	color: white;
+}
+
+.register{
+	color: #F2A62C;
+	background-color: #0A1138;
+}
+
+.bottom{
+	color: #D44529;
+}
+
+.middle{
+	height: 73vh;
+}

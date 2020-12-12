@@ -2,14 +2,12 @@ import React from 'react';
 
 import comingsoon from '../../assets/ComingSoonPage/comingsoon.png';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
-import Footer from '../../components/footer/footer.component';
-import Header from '../../components/header/header.component';
 
 import './ComingSoon.styles.css';
 
 const ComingSoon = () => (
     <>
-        <Header />
+
         <div className="main-div">
             <div className="first-div">
                 <a href="https://csivit.com" rel="noreferrer" target="_blank">
@@ -32,7 +30,6 @@ const ComingSoon = () => (
             </div>
             <div className="third-div">Coming Soon</div>
         </div>
-        <Footer />
     </>
 );
 
