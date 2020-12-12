@@ -34,7 +34,7 @@ const ComingSoon = () => (
         </div>
         <div className="bottom-div">
             <div className="icons-div">
-                <a href="https://csivit.com" aria-label="Instagram">
+                <a href="https://www.instagram.com/csivitu/" aria-label="Instagram">
                     <IconContext.Provider
                         value={{
                             color: 'white',
@@ -47,7 +47,7 @@ const ComingSoon = () => (
                         </div>
                     </IconContext.Provider>
                 </a>
-                <a href="https://csivit.com" aria-label="Facebook">
+                <a href="https://www.facebook.com/csivitu/" aria-label="Facebook">
                     <IconContext.Provider
                         value={{
                             color: 'white',
@@ -60,7 +60,7 @@ const ComingSoon = () => (
                         </div>
                     </IconContext.Provider>
                 </a>
-                <a href="https://csivit.com" aria-label="Twitter">
+                <a href="https://twitter.com/csivitu" aria-label="Twitter">
                     <IconContext.Provider
                         value={{
                             color: 'white',
@@ -73,7 +73,7 @@ const ComingSoon = () => (
                         </div>
                     </IconContext.Provider>
                 </a>
-                <a href="https://csivit.com" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/computer-society-of-india-vit-student-chapter/" aria-label="LinkedIn">
                     <IconContext.Provider
                         value={{
                             color: 'white',
