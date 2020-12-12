@@ -1,0 +1,13 @@
+.footer-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icons-div {
+	display: flex;
+}
+
+.icons-div > * {
+	margin: 0 10px;
+}

@@ -1,20 +1,20 @@
 import React from 'react';
-import { IconContext } from 'react-icons';
-import {
-    FaInstagram, FaFacebook, FaLinkedin, FaTwitter,
-} from 'react-icons/fa';
 
 import comingsoon from '../../assets/ComingSoonPage/comingsoon.png';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
+import Footer from '../../components/footer/footer.component';
+import Header from '../../components/header/header.component';
 
 import './ComingSoon.styles.css';
 
 const ComingSoon = () => (
     <>
-        <div className="navbar-div" />
+        <Header />
         <div className="main-div">
             <div className="first-div">
-                <a href="https://csivit.com"><img src={csilogo} alt="CSIVIT" className="csi-logo" /></a>
+                <a href="https://csivit.com" rel="noreferrer" target="_blank">
+                    <img src={csilogo} alt="CSIVIT" className="csi-logo" />
+                </a>
             </div>
             <div className="second-div">
                 <div className="text-div">
@@ -32,62 +32,7 @@ const ComingSoon = () => (
             </div>
             <div className="third-div">Coming Soon</div>
         </div>
-        <div className="bottom-div">
-            <div className="icons-div">
-                <a href="https://www.instagram.com/csivitu/" aria-label="Instagram">
-                    <IconContext.Provider
-                        value={{
-                            color: 'white',
-                            className: 'csi-instagram',
-                            size: '3rem',
-                        }}
-                    >
-                        <div>
-                            <FaInstagram />
-                        </div>
-                    </IconContext.Provider>
-                </a>
-                <a href="https://www.facebook.com/csivitu/" aria-label="Facebook">
-                    <IconContext.Provider
-                        value={{
-                            color: 'white',
-                            className: 'csi-facebook',
-                            size: '3rem',
-                        }}
-                    >
-                        <div>
-                            <FaFacebook />
-                        </div>
-                    </IconContext.Provider>
-                </a>
-                <a href="https://twitter.com/csivitu" aria-label="Twitter">
-                    <IconContext.Provider
-                        value={{
-                            color: 'white',
-                            className: 'csi-twitter',
-                            size: '3rem',
-                        }}
-                    >
-                        <div>
-                            <FaTwitter />
-                        </div>
-                    </IconContext.Provider>
-                </a>
-                <a href="https://www.linkedin.com/company/computer-society-of-india-vit-student-chapter/" aria-label="LinkedIn">
-                    <IconContext.Provider
-                        value={{
-                            color: 'white',
-                            className: 'csi-linkedin',
-                            size: '3rem',
-                        }}
-                    >
-                        <div>
-                            <FaLinkedin />
-                        </div>
-                    </IconContext.Provider>
-                </a>
-            </div>
-        </div>
+        <Footer />
     </>
 );
 
