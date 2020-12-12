@@ -4,8 +4,8 @@ import {
     FaInstagram, FaFacebook, FaLinkedin, FaTwitter,
 } from 'react-icons/fa';
 
-import comingsoon from '../../assets/comingsoon.png';
-import csilogo from '../../assets/csilogo.png';
+import comingsoon from '../../assets/ComingSoonPage/comingsoon.png';
+import csilogo from '../../assets/ComingSoonPage/csilogo.png';
 
 import './ComingSoon.styles.css';
 
