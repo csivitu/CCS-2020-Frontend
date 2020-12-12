@@ -93,7 +93,7 @@ body {
 }
 
 .csi-logo {
-	margin-top: 20px;
+	margin: 20px 0;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -123,6 +123,10 @@ body {
 
 	.illustration {
 		max-width: 55%;
+	}
+
+	.csi-logo {
+		width: 60%;
 	}
 }
 
