@@ -26,9 +26,17 @@ body {
 	min-height: calc(100vh - 120px);
 	background-color: #18204F;
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	overflow-y: scroll;
+}
+
+.second-div {
+	width: 100%;
+	background-color: #18204F;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .text-div {
@@ -55,10 +63,37 @@ body {
 	max-height: 70%;
 }
 
-.coming-soon {
+.third-div {
 	color: #D44529;
 	font-size: 5rem;
 	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.first-div {
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottom-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icons-div {
+	display: flex;
+}
+
+.icons-div > * {
+	margin: 0 10px;
+}
+
+.csi-logo {
+	margin-top: 20px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -108,11 +143,16 @@ body {
 	}
 
 	.illustration {
-		max-width: 60%;
+		max-width: 50%;
+		margin-top: 30px;
 	}
 
-	.main-div {
+	.second-div {
 		flex-direction: column;
+	}
+
+	.csi-logo {
+		height: 40px;
 	}
 }
 
