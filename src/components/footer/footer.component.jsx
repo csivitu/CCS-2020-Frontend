@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import { IconContext } from 'react-icons';
 import {
     FaInstagram, FaFacebook, FaLinkedin, FaTwitter,
@@ -8,7 +8,7 @@ import {
 import './footer.styles.css';
 
 const Footer = () => (
-    <Row className="footer-div">
+    <Navbar className="footer-div">
         <div className="icons-div">
             <a
                 href="https://www.instagram.com/csivitu/"
@@ -83,7 +83,7 @@ const Footer = () => (
                 </IconContext.Provider>
             </a>
         </div>
-    </Row>
+    </Navbar>
 );
 
 export default Footer;
