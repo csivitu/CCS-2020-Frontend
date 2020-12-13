@@ -31,16 +31,13 @@ const LandingPage = () => (
                             <h4 className="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing
                                 <br />
-                                {' '}
                                 elit.
                                 Justo dolor sed etiam sit.
                                 Integer scelerisque eu,
-                                {' '}
                                 <br />
                                 tellus velit hac auctor tempor eget.
                                 Volutpat
                                 <br />
-                                {' '}
                                 egestas nunc, dolor, massa convallis
                             </h4>
                         </div>

@@ -1,6 +1,5 @@
-.header-div {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
+.navbar-div {
+	height: 60px;
+	width: 100%;
+	background-color: #12355D;
 }

@@ -1,16 +1,7 @@
-html,
-body {
-  font-size: 62.5%;
-  height: 100vh;
-}
+
 .all {
   background-image: url("../../assets/LandingPage/background.svg");
 
-}
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .content {

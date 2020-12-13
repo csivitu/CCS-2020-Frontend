@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 html,body {
 	font-size: 62.5%; /*10px*/
 	height: 100vh;
@@ -17,6 +23,10 @@ body {
 }
 
 .main-div {
+	background: url("../../assets/ComingSoonPage/comingsoonbg.jpeg");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 	min-height: calc(100vh - 120px);
 	background-color: #18204F;
 	display: flex;
@@ -27,7 +37,6 @@ body {
 
 .second-div {
 	width: 100%;
-	background-color: #18204F;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -72,6 +81,10 @@ body {
 	align-items: center;
 }
 
+.csi-logo {
+	margin: 20px 0;
+}
+
 @media only screen and (max-width: 1200px) {
 	html {
 		font-size: 45%;
@@ -97,7 +110,7 @@ body {
 		font-size: 35%;
 	}
 
-	.illustration {	margin: 20px 0;
+	.illustration {
 		max-width: 55%;
 	}
 
@@ -133,6 +146,7 @@ body {
 
 	.csi-logo {
 		height: 40px;
+		width: auto;
 	}
 }
 
