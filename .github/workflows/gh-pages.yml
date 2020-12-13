@@ -17,7 +17,7 @@ jobs:
           FOLDER_NAME: build
       run: |
         echo $DOTENV > .env
-        npm ci --only=production
+        npm ci
         npm run build
         echo $CNAME > build/CNAME
         git config user.name csivitu
