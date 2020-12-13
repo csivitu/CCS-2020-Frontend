@@ -1,28 +1,46 @@
-html,body {
-	font-size: 62.5%; /*10px*/
-	height: 100vh;
-
-}
-
+html,
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  font-size: 62.5%;
+  height: 100vh;
+}
+.all {
+  background-image: url("../../assets/HomePage/background.svg");
+
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.content{
-	color: white;
+.content {
+  color: white;
 }
 
-.register{
-	color: #F2A62C;
-	background-color: #0A1138;
+.register {
+  color: #f2a62c;
+  background-color: #0a1138;
+  height: 4rem;
+  width: 10rem;
+  border-radius: 32rem;
 }
 
-.bottom{
-	color: #D44529;
+.bottom {
+  color: #d44529;
 }
 
-.middle{
-	height: 73vh;
+.bottom > h1{
+	font-size: x-large;
+}
+
+.middle {
+  height: 73vh;
+}
+
+.recruiting{
+	color: #f2a62c;
+}
+
+.recruiting > *{
+ margin-bottom: 20px;
 }

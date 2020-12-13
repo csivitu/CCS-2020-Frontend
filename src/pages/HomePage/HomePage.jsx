@@ -6,10 +6,9 @@ import './HomePage.styles.css';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
 
 const HomePage = () => (
-    <>
+    <div className="all">
 
-        <Container fluid>
-
+        <Container>
             <Row className="text-center">
                 <div className="mt-5 mx-auto">
                     <a href="https://csivit.com" rel="noreferrer" target="_blank">
@@ -18,19 +17,16 @@ const HomePage = () => (
                 </div>
             </Row>
             <Row className="middle">
-                <Col className="text-div justify-content-center">
+                <Col className="text-div d-flex justify-content-center align-items-center">
                     CORE
                     <br />
-                    COMMITTE
-                    {' '}
+                    COMMITTEE
                     <br />
                     SELECTIONS
-                    {' '}
-                    <br />
                 </Col>
-                <Col className="justify-content-left">
+                <Col className="d-flex justify-content-center align-items-center">
                     <div>
-                        <div className="text-div">
+                        <div className="recruiting d-flex-column justify-content-space-around">
                             <h1><b>We are Recruiting</b></h1>
                             <h4 className="content">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -59,7 +55,7 @@ const HomePage = () => (
 
         </Container>
 
-    </>
+    </div>
 );
 
 export default HomePage;
