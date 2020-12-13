@@ -6,6 +6,7 @@ import Footer from './components/footer/footer.component';
 import Header from './components/header/header.component';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
 import LandingPage from './pages/LandingPage/LandingPage';
+import HomePage from './pages/HomePage/HomPage';
 
 function App() {
     return (
@@ -16,6 +17,9 @@ function App() {
             </Route>
             <Route exact path="/home">
                 <LandingPage />
+            </Route>
+            <Route exact path="/domains">
+                <HomePage />
             </Route>
             <Footer />
         </div>
