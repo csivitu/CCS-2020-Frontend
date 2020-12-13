@@ -1,0 +1,173 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,body {
+	font-size: 62.5%; /*10px*/
+	height: 100vh;
+
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.navbar-div, .footer-div {
+	height: 60px;
+	width: 100%;
+	background-color: #12355D;
+}
+
+.main-div {
+	background: url("../../assets/ComingSoonPage/comingsoonbg.jpeg");
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	min-height: calc(100vh - 120px);
+	background-color: #18204F;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.second-div {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.text-div {
+	font-size: 8rem;
+	color: #f2a62c;
+	padding-left: 20px;
+}
+
+.text-div > * {
+	margin: 20px 0;
+}
+
+.illustration-div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.illustration {
+	max-width: 100%;
+	height: auto;
+	max-height: 70%;
+}
+
+.third-div {
+	color: #D44529;
+	font-size: 5rem;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.first-div {
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.csi-logo {
+	margin: 20px 0;
+}
+
+@media only screen and (max-width: 1200px) {
+	html {
+		font-size: 45%;
+	}
+
+	.illustration {
+		max-width: 65%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	html {
+		font-size: 40%;
+	}
+
+	.illustration {
+		max-width: 60%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	html {
+		font-size: 35%;
+	}
+
+	.illustration {
+		max-width: 55%;
+	}
+
+	.csi-logo {
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	html {
+		font-size: 40%;
+	}
+
+	.illustration {
+		max-width: 60%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	html {
+		font-size: 40%;
+	}
+
+	.illustration {
+		max-width: 50%;
+		margin-top: 30px;
+	}
+
+	.second-div {
+		flex-direction: column;
+	}
+
+	.csi-logo {
+		height: 40px;
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	html {
+		font-size: 30%;
+	}
+
+	.illustration {
+		max-width: 45%;
+	}
+
+}
+
+@media only screen and (max-width: 300px) {
+	html {
+		font-size: 25%;
+	}
+
+	.illustration {
+		max-width: 35%;
+	}
+
+}

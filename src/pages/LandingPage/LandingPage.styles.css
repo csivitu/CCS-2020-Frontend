@@ -1,0 +1,37 @@
+
+.all {
+  background-image: url("../../assets/LandingPage/background.svg");
+
+}
+
+.content {
+  color: white;
+}
+
+.register {
+  color: #f2a62c;
+  background-color: #0a1138;
+  height: 4rem;
+  width: 10rem;
+  border-radius: 32rem;
+}
+
+.bottom {
+  color: #d44529;
+}
+
+.bottom > h1{
+	font-size: x-large;
+}
+
+.middle {
+  height: 73vh;
+}
+
+.recruiting{
+	color: #f2a62c;
+}
+
+.recruiting > *{
+ margin-bottom: 20px;
+}
