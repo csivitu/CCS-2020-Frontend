@@ -5,7 +5,7 @@ import './App.css';
 import Footer from './components/footer/footer.component';
 import Header from './components/header/header.component';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
-import HomePage from './pages/HomePage/HomePage';
+import LandingPage from './pages/LandingPage/LandingPage';
 
 function App() {
     return (
@@ -15,7 +15,7 @@ function App() {
                 <ComingSoon />
             </Route>
             <Route exact path="/home">
-                <HomePage />
+                <LandingPage />
             </Route>
             <Footer />
         </div>

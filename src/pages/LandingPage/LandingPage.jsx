@@ -2,10 +2,10 @@ import React from 'react';
 import {
     Container, Row, Col, Button,
 } from 'react-bootstrap';
-import './HomePage.styles.css';
+import './LandingPage.styles.css';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
 
-const HomePage = () => (
+const LandingPage = () => (
     <div className="all">
 
         <Container>
@@ -58,4 +58,4 @@ const HomePage = () => (
     </div>
 );
 
-export default HomePage;
+export default LandingPage;
