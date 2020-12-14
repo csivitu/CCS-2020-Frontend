@@ -1,22 +1,26 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/footer/footer.component';
 import Header from './components/header/header.component';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
-// import LandingPage from './pages/LandingPage/LandingPage';
+import LandingPage from './pages/LandingPage/LandingPage';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
     return (
         <>
             <Header />
-            <ComingSoon />
-            {/* <Route exact path="/">
+            {/* <ComingSoon /> */}
+            <Route exact path="/">
                 <ComingSoon />
             </Route>
             <Route exact path="/home">
                 <LandingPage />
-            </Route> */}
+            </Route>
+            <Route exact path="/domains">
+                <HomePage />
+            </Route>
             <Footer />
         </>
 
