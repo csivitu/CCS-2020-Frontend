@@ -52,3 +52,48 @@ body {
         transform: translate(0);
     }
 }
+
+@media only screen and (max-width: 1200px) {
+	html,body {
+		font-size: 45%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	html,body {
+		font-size: 40%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	html,body {
+		font-size: 35%;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	html,body {
+		font-size: 40%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	html,body {
+		font-size: 40%;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	html, body {
+		font-size: 30%;
+	}
+
+}
+
+@media only screen and (max-width: 300px) {
+	html, body {
+		font-size: 25%;
+	}
+
+}

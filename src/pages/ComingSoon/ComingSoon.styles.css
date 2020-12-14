@@ -4,7 +4,17 @@
 	box-sizing: border-box;
 }
 
+html,body {
+	font-size: 62.5%; /*10px*/
+	height: 100vh;
 
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
 
 .navbar-div, .footer-div {
 	height: 60px;
@@ -75,39 +85,7 @@
 	margin: 20px 0;
 }
 
-.core {
-	animation: moveInLeft 1s ease-out;
-}
-
-.committee {
-	animation: moveInLeft 2s ease-out;
-}
-
-.selections {
-	animation: moveInLeft 3s ease-out;
-}
-
-@keyframes moveInLeft {
-    0%{
-        opacity: 0;
-        transform: translateX(-100rem);
-    }
-
-    80% {
-        transform: translateX(1rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-
-}
-
 @media only screen and (max-width: 1200px) {
-	html {
-		font-size: 45%;
-	}
 
 	.illustration {
 		max-width: 65%;
@@ -115,9 +93,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-	html {
-		font-size: 40%;
-	}
+
 
 	.illustration {
 		max-width: 60%;
@@ -125,9 +101,6 @@
 }
 
 @media only screen and (max-width: 900px) {
-	html {
-		font-size: 35%;
-	}
 
 	.illustration {
 		max-width: 55%;
@@ -139,9 +112,6 @@
 }
 
 @media only screen and (max-width: 750px) {
-	html {
-		font-size: 40%;
-	}
 
 	.illustration {
 		max-width: 60%;
@@ -150,9 +120,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-	html {
-		font-size: 40%;
-	}
 
 	.illustration {
 		max-width: 50%;
@@ -170,10 +137,6 @@
 }
 
 @media only screen and (max-width: 450px) {
-	html {
-		font-size: 30%;
-	}
-
 	.illustration {
 		max-width: 45%;
 	}
@@ -181,10 +144,6 @@
 }
 
 @media only screen and (max-width: 300px) {
-	html {
-		font-size: 25%;
-	}
-
 	.illustration {
 		max-width: 35%;
 	}
