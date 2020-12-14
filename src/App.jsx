@@ -6,6 +6,7 @@ import Header from './components/header/header.component';
 import ComingSoon from './pages/ComingSoon/ComingSoon';
 import LandingPage from './pages/LandingPage/LandingPage';
 import HomePage from './pages/HomePage/HomePage';
+import QuizPage from './pages/QuizPage/QuizPage';
 
 import './App.css';
 
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route exact path="/domains">
                 <HomePage />
+            </Route>
+            <Route exact path="/quiz">
+                <QuizPage />
             </Route>
             <Footer />
         </>
