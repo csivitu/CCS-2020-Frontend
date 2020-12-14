@@ -7,14 +7,19 @@
 html {
     font-size: 62.5%; /*10px*/
     height: 100vh;
+    /* overflow: hidden !important; */
 }
 
 body {
     font-size: 62.5%; /*10px*/
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* overflow: hidden; */
+}
+
+#root {
+    position: relative;
     overflow: hidden;
 }
 
