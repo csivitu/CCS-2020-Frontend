@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /*10px*/
+    height: 100vh;
+    /* overflow: hidden !important; */
+}
+
+body {
+    font-size: 62.5%; /*10px*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* overflow: hidden; */
+}
+
+#root {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-div {
+    background-image: url('./assets/LandingPage/background.svg');
+    background-repeat: repeat-x;
+    height: 100%;
+    width: 507600px;
+    position: absolute;
+    animation: slide 120s linear infinite;
+    z-index: -1000;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-1692px, 0, 0);
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-1000rem);
+    }
+
+    80% {
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+	html,body {
+		font-size: 45%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	html,body {
+		font-size: 40%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	html,body {
+		font-size: 35%;
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	html,body {
+		font-size: 40%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	html,body {
+		font-size: 40%;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	html, body {
+		font-size: 30%;
+	}
+
+}
+
+@media only screen and (max-width: 300px) {
+	html, body {
+		font-size: 25%;
+	}
+
+}
