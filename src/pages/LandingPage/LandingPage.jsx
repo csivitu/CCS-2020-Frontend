@@ -7,7 +7,7 @@ import csilogo from '../../assets/ComingSoonPage/csilogo.png';
 
 const LandingPage = () => (
     <div className="all">
-
+        {/* <div className="all-inner" /> */}
         <Container>
             <Row className="text-center">
                 <div className="mt-5 mx-auto">
