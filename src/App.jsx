@@ -13,6 +13,7 @@ import './App.css';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
+    const [notAllowed, setNotAllowed] = useState(false);
 
     const logout = () => {
         localStorage.removeItem('token');
@@ -32,7 +33,10 @@ function App() {
         if (user.regNo.startsWith('20') || user.scope.indexOf('csi') > -1) {
             // store in redux
             setLoggedIn(true);
+            return;
         }
+
+        setNotAllowed(true);
     };
 
     useEffect(() => {
@@ -54,6 +58,7 @@ function App() {
             <Route exact path="/">
                 <LandingPage
                     loggedIn={loggedIn}
+                    notAllowed={notAllowed}
                 />
             </Route>
             {/* <Route exact path="/domains">

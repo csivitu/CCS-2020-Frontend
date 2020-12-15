@@ -12,7 +12,7 @@ import Header from '../../components/header/header.component';
 
 const LandingPage = (props) => {
     const history = useHistory();
-    const { loggedIn } = props;
+    const { loggedIn, notAllowed } = props;
     return (
         <>
             <Header />
@@ -48,9 +48,10 @@ const LandingPage = (props) => {
                 <Row className="justify-content-md-center mb-2">
                     <h2 className="mx-auto red">
                         <b>
-                            {
-                                loggedIn ? 'Registered Successfully. Stay Tuned!' : 'Register Now!'
-                            }
+                            {(() => {
+                                const r = loggedIn ? 'Registered Successfully. Stay Tuned!' : 'Register Now!';
+                                return notAllowed ? 'Registration failed! CCS by CSI-VIT is only for freshers.' : r;
+                            })()}
                         </b>
                     </h2>
                 </Row>
@@ -63,10 +64,12 @@ const LandingPage = (props) => {
 
 LandingPage.propTypes = {
     loggedIn: propTypes.bool,
+    notAllowed: propTypes.bool,
 };
 
 LandingPage.defaultProps = {
     loggedIn: false,
+    notAllowed: false,
 };
 
 export default LandingPage;
