@@ -34,7 +34,9 @@ const HomePage = () => (
             </Row>
         </Container>
         <Row className="d-flex justify-content-between cards">
-            <Row>{dataBundle.map(createCard)}</Row>
+            <div className="mx-auto">
+                <Row>{dataBundle.map(createCard)}</Row>
+            </div>
         </Row>
     </div>
 );

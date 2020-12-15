@@ -23,8 +23,8 @@ const Timer = () => {
         }
     }, 1000);
     return (
-        <div className="timer-container">
-            <h1><b>Round 1</b></h1>
+        <div className="timer-container mt-5">
+            <h1><b>Round 1:</b></h1>
             <div className="timer">
                 <p id="demo" />
             </div>

@@ -7,6 +7,7 @@ import ComingSoon from './pages/ComingSoon/ComingSoon';
 import LandingPage from './pages/LandingPage/LandingPage';
 import HomePage from './pages/HomePage/HomePage';
 import QuizPage from './pages/QuizPage/QuizPage';
+import DiscordPage from './pages/DiscordPage/DiscordPage';
 
 import './App.css';
 
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route exact path="/quiz">
                 <QuizPage />
+            </Route>
+            <Route exact path="/discord">
+                <DiscordPage />
             </Route>
             <Footer />
         </>
