@@ -3,22 +3,16 @@ import {
     Container, Row, Col, Button,
 } from 'react-bootstrap';
 import './LandingPage.styles.css';
-import csilogo from '../../assets/ComingSoonPage/csilogo.png';
+import Logo from '../../components/logo';
 import illustration from '../../assets/LandingPage/illustration.svg';
 
 const LandingPage = () => (
     <div className="all">
         <Container fluid className="h-100 d-flex flex-column justify-content-around">
-            <Row className="text-center">
-                <div className="mt-5 mx-auto">
-                    <a href="https://csivit.com" rel="noreferrer" target="_blank">
-                        <img src={csilogo} alt="CSIVIT" className="csi-logo" />
-                    </a>
-                </div>
-            </Row>
+            <Logo />
             <Row className="middle d-flex">
-                <Col md={6} className="d-flex justify-content-center align-items-center">
-                    <div className="core-div">
+                <Col md={6} className="d-flex justify-content-center align-items-center text-center">
+                    <div className="core-div text-left">
                         CORE
                         <br />
                         COMMITTEE
@@ -27,10 +21,10 @@ const LandingPage = () => (
                     </div>
 
                 </Col>
-                <Col md={6} className="d-flex align-items-center px-4">
-                    <div className="m-auto">
-                        <div className="recruiting">
-                            <h1 className="mb-3"><strong>We are Recruiting</strong></h1>
+                <Col md={6} className="d-flex justify-content-center flex-column px-4">
+                    <div className="text-center w-75">
+                        <div className="recruiting text-left">
+                            <h1 className="mb-3 red"><strong>We are Recruiting</strong></h1>
                             <h4 className="content mb-4">
 
                                 Be a part of CSI where skilled designers, developers and tech
@@ -39,13 +33,12 @@ const LandingPage = () => (
 
                             </h4>
                         </div>
-
-                        <Button size="lg" className="register">REGISTER</Button>
                     </div>
+                    <Button size="lg" className="register">REGISTER</Button>
                 </Col>
             </Row>
-            <Row className="justify-content-md-center mb-5">
-                <h1 className="mx-auto"><b>ROUND 1 is NOW LIVE.</b></h1>
+            <Row className="justify-content-md-center mb-2">
+                <h2 className="mx-auto red"><b>ROUND 1 is NOW LIVE.</b></h2>
             </Row>
             <img className="bottom-right" src={illustration} alt="Illustration" />
         </Container>

@@ -1,128 +1,110 @@
-
 .all {
-  height: calc(100vh - 120px);
-  overflow-x: hidden;
-  overflow-y: scroll;
+    height: calc(100vh - 120px);
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .all-inner {
-  background-image: url("../../assets/LandingPage/background.svg");
-  background-repeat: repeat-x;
-  height: calc(100vh - 120px);
-  width: 507600px;
-  position: absolute;
-  animation: slide 120s linear infinite;
-  z-index: -1000;
+    background-image: url("../../assets/LandingPage/background.svg");
+    background-repeat: repeat-x;
+    height: calc(100vh - 120px);
+    width: 507600px;
+    position: absolute;
+    animation: slide 120s linear infinite;
+    z-index: -1000;
 }
 
-@keyframes slide{
-  0%{
-    transform: translate3d(0, 0, 0);
-  }
-  100%{
-    transform: translate3d(-1692px, 0, 0);
-  }
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-1692px, 0, 0);
+    }
 }
 
-.core-div{
-  color: #f2a62c;
-  font-size: 4rem;
+.core-div {
+    color: #f2a62c;
+    font-size: 4rem;
 }
 
 .content {
-  color: white;
-  font-size: 1.2rem;
-  width: 60%;
+    color: white;
+    font-size: 1.2rem;
+    width: 85%;
 }
 
 .register {
-  font-size: 1rem;
-  color: #f2a62c;
-  background-color: #0a1138;
-  height: 3rem;
-  width: 9rem;
-  border-radius: 1.5rem;
+    font-size: 1rem;
+    color: #f2a62c;
+    background-color: #0a1138;
+    height: 3rem;
+    width: 9rem;
+    border-radius: 1.5rem;
 }
 
-.bottom {
-  color: #d44529;
-  margin-top: -100px;
-}
-
-.bottom > h1{
-	font-size: 1.5rem;
+.register:hover {
+    color: #f2a62c;
+    background-color: #0b0f29;
 }
 
 .middle {
-  height: 70%
+    height: 80%
 }
 
-.recruiting{
-  color: #f2a62c;
-  height: 100%;
+.recruiting {
+    color: #f2a62c;
+    height: 100%;
 }
 
-.bottom-right{
-  position: absolute;
-  right: 5%;
-  bottom: 10%;
-  height: 30%;
+.bottom-right {
+    position: absolute;
+    right: 5%;
+    bottom: 10%;
+    height: 30%;
 }
 
 @media only screen and (max-width: 1200px) {
-
-	.bottom-right {
-    max-width: 40%;
-    max-height: 40%;
-    
-	}
+    .bottom-right {
+        max-width: 40%;
+        max-height: 40%;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
-
-
-	.bottom-right {
-    max-width: 40%;
-    max-height: 40%;
-	}
+    .bottom-right {
+        max-width: 40%;
+        max-height: 40%;
+    }
 }
 
 @media only screen and (max-width: 900px) {
-
-	.bottom-right {
-    max-width: 40%;
-    max-height: 40%;
-    
-	}
-
+    .bottom-right {
+        max-width: 40%;
+        max-height: 40%;
+    }
 }
 
 @media only screen and (max-width: 750px) {
-
-	.bottom-right {
-		max-width: 30%;
-	}
-
+    .bottom-right {
+        max-width: 30%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
-
-	.bottom-right {
-    display: none;
-	}
-
+    .bottom-right {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 450px) {
-	.bottom-right {
-    display: none;
-	}
-
+    .bottom-right {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 300px) {
-	.bottom-right {
-    display: none;
-	}
-
+    .bottom-right {
+        display: none;
+    }
 }
