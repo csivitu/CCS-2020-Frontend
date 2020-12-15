@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api, { setAuthToken } from './api/api';
@@ -34,6 +34,12 @@ function App() {
             setLoggedIn(true);
         }
     };
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            onLogin();
+        }
+    }, []);
 
     return (
         <>
