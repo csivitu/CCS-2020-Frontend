@@ -46,7 +46,7 @@ const LandingPage = (props) => {
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center mb-2">
-                    <h2 className="mx-auto red">
+                    <h2 className="mx-auto red text-center">
                         <b>
                             {(() => {
                                 const r = loggedIn ? 'Registered Successfully. Stay Tuned!' : 'Register Now!';
