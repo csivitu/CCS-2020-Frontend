@@ -1,0 +1,10 @@
+.csi-logo {
+    width: 80%;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 569px) {
+    .csi-logo {
+        width: 60vw;
+    }
+}

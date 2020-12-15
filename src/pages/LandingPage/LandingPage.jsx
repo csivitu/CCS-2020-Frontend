@@ -2,57 +2,71 @@ import React from 'react';
 import {
     Container, Row, Col, Button,
 } from 'react-bootstrap';
+import propTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import './LandingPage.styles.css';
-import csilogo from '../../assets/ComingSoonPage/csilogo.png';
+import Logo from '../../components/logo';
+import illustration from '../../assets/LandingPage/illustration.svg';
+import Footer from '../../components/footer/footer.component';
+import Header from '../../components/header/header.component';
 
-const LandingPage = () => (
-    <div className="all">
-        {/* <div className="all-inner" /> */}
-        <Container>
-            <Row className="text-center">
-                <div className="mt-5 mx-auto">
-                    <a href="https://csivit.com" rel="noreferrer" target="_blank">
-                        <img src={csilogo} alt="CSIVIT" className="csi-logo" />
-                    </a>
-                </div>
-            </Row>
-            <Row className="middle">
-                <Col className="text-div d-flex justify-content-center align-items-center">
-                    CORE
-                    <br />
-                    COMMITTEE
-                    <br />
-                    SELECTIONS
-                </Col>
-                <Col className="d-flex justify-content-center align-items-center">
-                    <div>
-                        <div className="recruiting d-flex-column justify-content-space-around">
-                            <h1><b>We are Recruiting</b></h1>
-                            <h4 className="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
-                                <br />
-                                elit.
-                                Justo dolor sed etiam sit.
-                                Integer scelerisque eu,
-                                <br />
-                                tellus velit hac auctor tempor eget.
-                                Volutpat
-                                <br />
-                                egestas nunc, dolor, massa convallis
-                            </h4>
+const LandingPage = (props) => {
+    const history = useHistory();
+    const { loggedIn } = props;
+    return (
+        <>
+            <Header />
+            <Container fluid className="d-flex flex-column justify-content-between all">
+                <Logo />
+                <Row className="middle d-flex">
+                    <Col sm={6} className="d-flex justify-content-center align-items-center text-center">
+                        <div className="core-div text-left">
+                            CORE
+                            <br />
+                            COMMITTEE
+                            <br />
+                            SELECTIONS
                         </div>
 
-                        <Button size="lg" className="register">REGISTER</Button>
-                    </div>
-                </Col>
-            </Row>
-            <Row className="justify-content-md-center bottom">
-                <h1><b>ROUND 1 is NOW LIVE.</b></h1>
-            </Row>
+                    </Col>
+                    <Col sm={6} className="d-flex justify-content-center flex-column px-4">
+                        <div className="text-center">
+                            <div className="recruiting text-left mx-auto">
+                                <h1 className="mb-3 red"><strong>We are Recruiting</strong></h1>
+                                <h4 className="content mb-4">
 
-        </Container>
+                                    Be a part of CSI where skilled designers, developers and tech
+                                    enthusiasts engage in a lot of projects and hackathons,
+                                    to help push technology forward.
 
-    </div>
-);
+                                </h4>
+                                <Button size="lg" className="register" onClick={() => history.push('/login')}>REGISTER</Button>
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-2">
+                    <h2 className="mx-auto red">
+                        <b>
+                            {
+                                loggedIn ? 'Registered Successfully. Stay Tuned!' : 'Register Now!'
+                            }
+                        </b>
+                    </h2>
+                </Row>
+                <img className="bottom-right" src={illustration} alt="Illustration" />
+            </Container>
+            <Footer />
+        </>
+    );
+};
+
+LandingPage.propTypes = {
+    loggedIn: propTypes.bool,
+};
+
+LandingPage.defaultProps = {
+    loggedIn: false,
+};
 
 export default LandingPage;

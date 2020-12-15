@@ -1,145 +1,123 @@
-.navbar-div, .footer-div {
-	height: 60px;
-	width: 100%;
-	background-color: #12355D;
+.navbar-div,
+.footer-div {
+    height: 60px;
+    width: 100%;
+    background-color: #0a1138;
 }
 
 .main-div {
-	background: url("../../assets/ComingSoonPage/comingsoonbg.jpeg");
-	background-attachment: fixed;
-	background-position: center;
-	background-size: cover;
-	min-height: calc(100vh - 120px);
-	background-color: #18204F;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+    background: url("../../assets/ComingSoonPage/comingsoonbg.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: calc(100vh - 120px);
+    background-color: #18204F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .second-div {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .text-div {
-	font-size: 8rem;
-	color: #f2a62c;
-	padding-left: 20px;
+    font-size: 4rem;
+    color: #f2a62c;
+    padding-left: 20px;
 }
 
-.text-div > * {
-	margin: 20px 0;
+.text-div>* {
+    margin: 20px 0;
 }
 
 .illustration-div {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .illustration {
-	max-width: 100%;
-	height: auto;
-	max-height: 70%;
+    max-width: 100%;
+    height: auto;
+    max-height: 70%;
 }
 
 .third-div {
-	color: #D44529;
-	font-size: 5rem;
-	margin-top: 50px;
-	margin-bottom: 20px;
+    color: #D44529;
+    font-size: 2.5rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .first-div {
-	width: 100%;
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.csi-logo {
-	margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .core {
-	animation: moveInLeft 1s ease-out;
+    animation: moveInLeft 1s ease-out;
 }
 
 .committee {
-	animation: moveInLeft 2s ease-out;
+    animation: moveInLeft 2s ease-out;
 }
 
 .selections {
-	animation: moveInLeft 3s ease-out;
+    animation: moveInLeft 3s ease-out;
 }
 
 @media only screen and (max-width: 1200px) {
-
-	.illustration {
-		max-width: 65%;
-	}
+    .illustration {
+        max-width: 65%;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
-
-
-	.illustration {
-		max-width: 60%;
-	}
+    .illustration {
+        max-width: 60%;
+    }
 }
 
 @media only screen and (max-width: 900px) {
-
-	.illustration {
-		max-width: 55%;
-	}
-
-	.csi-logo {
-		width: 60%;
-	}
+    .illustration {
+        max-width: 55%;
+    }
 }
 
 @media only screen and (max-width: 750px) {
-
-	.illustration {
-		max-width: 60%;
-	}
-
+    .illustration {
+        max-width: 60%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
-
-	.illustration {
-		max-width: 50%;
-		margin-top: 30px;
-	}
-
-	.second-div {
-		flex-direction: column;
-	}
-
-	.csi-logo {
-		height: 40px;
-		width: auto;
-	}
+    .illustration {
+        max-width: 50%;
+        margin-top: 30px;
+    }
+    .second-div {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-width: 450px) {
-	.illustration {
-		max-width: 45%;
-	}
-
+    .illustration {
+        max-width: 45%;
+    }
 }
 
 @media only screen and (max-width: 300px) {
-	.illustration {
-		max-width: 35%;
-	}
-
+    .illustration {
+        max-width: 35%;
+    }
 }

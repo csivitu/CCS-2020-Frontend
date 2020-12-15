@@ -1,0 +1,11 @@
+p {
+    font-size: 36px;
+    color: #F2A62C;
+    margin: 0;
+}
+
+.timer {
+    background-color: #0A1138;
+    padding: 2rem;
+    border-radius: 22px;
+}
