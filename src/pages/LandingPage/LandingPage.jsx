@@ -4,10 +4,10 @@ import {
 } from 'react-bootstrap';
 import './LandingPage.styles.css';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
+import illustration from '../../assets/LandingPage/illustration.svg';
 
 const LandingPage = () => (
     <div className="all">
-        {/* <div className="all-inner" /> */}
         <Container>
             <Row className="text-center">
                 <div className="mt-5 mx-auto">
@@ -16,7 +16,7 @@ const LandingPage = () => (
                     </a>
                 </div>
             </Row>
-            <Row className="middle">
+            <Row className="middle d-flex">
                 <Col className="text-div d-flex justify-content-center align-items-center">
                     CORE
                     <br />
@@ -29,16 +29,13 @@ const LandingPage = () => (
                         <div className="recruiting d-flex-column justify-content-space-around">
                             <h1><b>We are Recruiting</b></h1>
                             <h4 className="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing
+
+                                Be a part of CSI where skilled designers, developers and tech
                                 <br />
-                                elit.
-                                Justo dolor sed etiam sit.
-                                Integer scelerisque eu,
+                                enthusiasts engage in a lot of projects and hackathons,
                                 <br />
-                                tellus velit hac auctor tempor eget.
-                                Volutpat
-                                <br />
-                                egestas nunc, dolor, massa convallis
+                                to help push technology forward.
+
                             </h4>
                         </div>
 
@@ -47,9 +44,9 @@ const LandingPage = () => (
                 </Col>
             </Row>
             <Row className="justify-content-md-center bottom">
-                <h1><b>ROUND 1 is NOW LIVE.</b></h1>
+                <h1 className="mx-auto"><b>ROUND 1 is NOW LIVE.</b></h1>
             </Row>
-
+            <img className="bottom-right" src={illustration} alt="Illustration" />
         </Container>
 
     </div>

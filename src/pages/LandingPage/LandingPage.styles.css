@@ -56,3 +56,62 @@
 .recruiting > *{
  margin-bottom: 20px;
 }
+
+.bottom-right{
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
+
+@media only screen and (max-width: 1200px) {
+
+	.bottom-right {
+		max-width: 65%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+
+
+	.bottom-right {
+		max-width: 60%;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+
+	.bottom-right {
+		max-width: 55%;
+	}
+
+}
+
+@media only screen and (max-width: 750px) {
+
+	.bottom-right {
+		max-width: 60%;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+	.bottom-right {
+		max-width: 50%;
+	}
+
+}
+
+@media only screen and (max-width: 450px) {
+	.bottom-right {
+		max-width: 45%;
+	}
+
+}
+
+@media only screen and (max-width: 300px) {
+	.bottom-right {
+		max-width: 35%;
+	}
+
+}
