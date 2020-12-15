@@ -24,16 +24,24 @@
   }
 }
 
+.core-div{
+  color: #f2a62c;
+  font-size: 4rem;
+}
+
 .content {
   color: white;
+  font-size: 1.2rem;
+  width: 60%;
 }
 
 .register {
+  font-size: 1rem;
   color: #f2a62c;
   background-color: #0a1138;
-  height: 4rem;
-  width: 10rem;
-  border-radius: 32rem;
+  height: 3rem;
+  width: 9rem;
+  border-radius: 1.5rem;
 }
 
 .bottom {
@@ -42,31 +50,31 @@
 }
 
 .bottom > h1{
-	font-size: 5rem;
+	font-size: 1.5rem;
 }
 
 .middle {
-  height: 73vh;
+  height: 70%
 }
 
 .recruiting{
-	color: #f2a62c;
-}
-
-.recruiting > *{
- margin-bottom: 20px;
+  color: #f2a62c;
+  height: 100%;
 }
 
 .bottom-right{
   position: absolute;
   right: 5%;
   bottom: 10%;
+  height: 30%;
 }
 
 @media only screen and (max-width: 1200px) {
 
 	.bottom-right {
-		max-width: 65%;
+    max-width: 40%;
+    max-height: 40%;
+    
 	}
 }
 
@@ -74,14 +82,17 @@
 
 
 	.bottom-right {
-		max-width: 60%;
+    max-width: 40%;
+    max-height: 40%;
 	}
 }
 
 @media only screen and (max-width: 900px) {
 
 	.bottom-right {
-		max-width: 55%;
+    max-width: 40%;
+    max-height: 40%;
+    
 	}
 
 }
@@ -89,7 +100,7 @@
 @media only screen and (max-width: 750px) {
 
 	.bottom-right {
-		max-width: 60%;
+		max-width: 30%;
 	}
 
 }
@@ -97,21 +108,21 @@
 @media only screen and (max-width: 600px) {
 
 	.bottom-right {
-		max-width: 50%;
+    display: none;
 	}
 
 }
 
 @media only screen and (max-width: 450px) {
 	.bottom-right {
-		max-width: 45%;
+    display: none;
 	}
 
 }
 
 @media only screen and (max-width: 300px) {
 	.bottom-right {
-		max-width: 35%;
+    display: none;
 	}
 
 }
