@@ -5,9 +5,9 @@ import api, { setAuthToken } from './api/api';
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
-import HomePage from './pages/HomePage/HomePage';
-import QuizPage from './pages/QuizPage/QuizPage';
-import DiscordPage from './pages/DiscordPage/DiscordPage';
+// import HomePage from './pages/HomePage/HomePage';
+// import QuizPage from './pages/QuizPage/QuizPage';
+// import DiscordPage from './pages/DiscordPage/DiscordPage';
 
 import './App.css';
 
@@ -50,7 +50,7 @@ function App() {
                     loggedIn={loggedIn}
                 />
             </Route>
-            <Route exact path="/domains">
+            {/* <Route exact path="/domains">
                 <HomePage />
             </Route>
             <Route exact path="/quiz">
@@ -58,7 +58,7 @@ function App() {
             </Route>
             <Route exact path="/discord">
                 <DiscordPage />
-            </Route>
+            </Route> */}
         </>
 
     );
