@@ -1,7 +1,5 @@
 .all {
     height: calc(100vh - 120px);
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 .all-inner {
@@ -49,12 +47,13 @@
 }
 
 .middle {
-    height: 80%
+    height: 70%
 }
 
 .recruiting {
     color: #f2a62c;
     height: 100%;
+    width: 60%;
 }
 
 .bottom-right {
@@ -64,47 +63,28 @@
     height: 30%;
 }
 
-@media only screen and (max-width: 1200px) {
-    .bottom-right {
-        max-width: 40%;
-        max-height: 40%;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    .bottom-right {
-        max-width: 40%;
-        max-height: 40%;
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    .bottom-right {
-        max-width: 40%;
-        max-height: 40%;
-    }
-}
-
-@media only screen and (max-width: 750px) {
-    .bottom-right {
-        max-width: 30%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 813px) {
     .bottom-right {
         display: none;
     }
-}
-
-@media only screen and (max-width: 450px) {
-    .bottom-right {
-        display: none;
+    .core-div {
+        text-align: center !important;
+    }
+    .recruiting {
+        width: 90%;
+        text-align: center !important;
+    }
+    .content {
+        margin: auto;
     }
 }
 
-@media only screen and (max-width: 300px) {
-    .bottom-right {
-        display: none;
+@media only screen and (max-width: 569px) {
+    html,
+    body {
+        font-size: 8px !important;
+    }
+    .csi-logo {
+        width: 30vw;
     }
 }

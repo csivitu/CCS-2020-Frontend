@@ -17,6 +17,8 @@ body {
     position: relative;
     overflow: hidden;
     user-select: none;
+    height: 100vh;
+    width: 100vw;
 }
 
 .bg-div {
@@ -61,6 +63,13 @@ body {
     html,
     body {
         font-size: 22px;
+    }
+}
+
+@media (max-width: 813px) {
+    html,
+    body {
+        font-size: 12px;
     }
 }
 
