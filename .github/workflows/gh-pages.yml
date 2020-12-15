@@ -12,13 +12,11 @@ jobs:
     - uses: actions/setup-node@v1
     - name: push to gh-pages
       env:
-          DOTENV: ${{ secrets.DOTENV }}
           CNAME: ccs.csivit.com
           FOLDER_NAME: build
       run: |
-        echo $DOTENV > .env
         npm ci
-        npm run build
+        npm run build:prod
         echo $CNAME > build/CNAME
         git config user.name csivitu
         git add -f $FOLDER_NAME
