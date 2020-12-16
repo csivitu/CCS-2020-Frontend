@@ -74,7 +74,9 @@ const LandingPage = (props) => {
                                 }
                                 const r = loggedIn ? (
                                     <>
-                                        You have registered successfully
+                                        <h3 style={{ color: 'white' }}>
+                                            You have registered successfully
+                                        </h3>
                                         <br />
                                         <br />
                                         CCS Starts In
