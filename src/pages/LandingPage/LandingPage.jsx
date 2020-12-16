@@ -43,7 +43,7 @@ const LandingPage = (props) => {
                     >
                         <div className="text-center">
                             <div className="recruiting text-left mx-auto">
-                                <h1 className="mb-3 red">
+                                <h1 className="mb-3 yellow">
                                     <strong>We are Recruiting</strong>
                                 </h1>
                                 <h4 className="content mb-4">
@@ -66,7 +66,7 @@ const LandingPage = (props) => {
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center mb-2">
-                    <h2 className="mx-auto red text-center">
+                    <h2 className="mx-auto yellow text-center">
                         <b>
                             {(() => {
                                 if (!verified) {

@@ -10,6 +10,8 @@ import QuizPage from './pages/QuizPage/QuizPage';
 import DiscordPage from './pages/DiscordPage/DiscordPage';
 
 import './App.css';
+import SelectedPage from './pages/SelectedPage/SelectedPage';
+import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -23,7 +25,9 @@ function App() {
     const onLogin = async () => {
         const token = localStorage.getItem('token');
         setAuthToken(token);
-        const response = await api.get(`${process.env.REACT_APP_ACCOUNTS_URL}/user`);
+        const response = await api.get(
+            `${process.env.REACT_APP_ACCOUNTS_URL}/user`,
+        );
         const { user, success } = response.data;
 
         if (!success) {
@@ -76,8 +80,13 @@ function App() {
             <Route exact path="/discord">
                 <DiscordPage />
             </Route>
+            <Route exact path="/selections">
+                <SelectedPage />
+            </Route>
+            <Route exact path="/thankyou">
+                <ThankYouPage />
+            </Route>
         </>
-
     );
 }
 
