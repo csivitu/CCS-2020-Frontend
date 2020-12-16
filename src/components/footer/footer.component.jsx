@@ -14,7 +14,7 @@ const Footer = () => (
                 aria-label="Instagram"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{
@@ -33,7 +33,7 @@ const Footer = () => (
                 aria-label="Facebook"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{
@@ -52,7 +52,7 @@ const Footer = () => (
                 aria-label="Twitter"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{
@@ -71,7 +71,7 @@ const Footer = () => (
                 aria-label="LinkedIn"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{

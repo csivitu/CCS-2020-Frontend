@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
-import './HomePage.styles.css';
+import './styles.css';
 import dataBundle from './data';
 import DomainCard from '../../components/card/card.component';
 import Timer from '../../components/countdown';
