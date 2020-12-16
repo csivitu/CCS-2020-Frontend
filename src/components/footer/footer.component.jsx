@@ -8,7 +8,7 @@ import './footer.styles.css';
 
 const Footer = () => (
     <div className="d-flex justify-content-center footer-div">
-        <div className="icons-div d-flex justify-content-between">
+        <div className="icons-div d-flex mb-3 my-auto">
             <a
                 href="https://www.instagram.com/csivitu/"
                 aria-label="Instagram"
@@ -20,7 +20,7 @@ const Footer = () => (
                     value={{
                         color: 'white',
                         className: 'csi-instagram',
-                        size: '2rem',
+                        size: '1.5rem',
                     }}
                 >
                     <div>
@@ -39,7 +39,7 @@ const Footer = () => (
                     value={{
                         color: 'white',
                         className: 'csi-facebook',
-                        size: '2rem',
+                        size: '1.5rem',
                     }}
                 >
                     <div>
@@ -58,7 +58,7 @@ const Footer = () => (
                     value={{
                         color: 'white',
                         className: 'csi-twitter',
-                        size: '2rem',
+                        size: '1.5rem',
                     }}
                 >
                     <div>
@@ -77,7 +77,7 @@ const Footer = () => (
                     value={{
                         color: 'white',
                         className: 'csi-linkedin',
-                        size: '2rem',
+                        size: '1.5rem',
                     }}
                 >
                     <div>

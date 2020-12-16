@@ -22,23 +22,23 @@
 }
 
 .core-div {
-    color: #f2a62c;
-    font-size: 4rem;
+    color: white;
+    font-size: 3rem;
 }
 
 .content {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     width: 85%;
 }
 
 .register {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #f2a62c;
     background-color: #0a1138;
-    height: 3rem;
-    width: 9rem;
-    border-radius: 1.5rem;
+    height: 2.5rem;
+    width: 7rem;
+    border-radius: 0.5rem;
 }
 
 .register:hover {
