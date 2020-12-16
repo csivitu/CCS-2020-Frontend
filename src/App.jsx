@@ -5,9 +5,9 @@ import api, { setAuthToken } from './api/api';
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
-import HomePage from './pages/HomePage/HomePage';
-import QuizPage from './pages/QuizPage/QuizPage';
-import DiscordPage from './pages/DiscordPage/DiscordPage';
+// import HomePage from './pages/HomePage/HomePage';
+// import QuizPage from './pages/QuizPage/QuizPage';
+// import DiscordPage from './pages/DiscordPage/DiscordPage';
 
 import './App.css';
 
