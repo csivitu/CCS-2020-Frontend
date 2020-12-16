@@ -8,13 +8,13 @@ import './footer.styles.css';
 
 const Footer = () => (
     <div className="d-flex justify-content-center footer-div">
-        <div className="icons-div d-flex mb-3 my-auto">
+        <div className="icons-div d-flex align-items-center mb-3 my-auto">
             <a
                 href="https://www.instagram.com/csivitu/"
                 aria-label="Instagram"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{
@@ -33,7 +33,7 @@ const Footer = () => (
                 aria-label="Facebook"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{
@@ -52,7 +52,7 @@ const Footer = () => (
                 aria-label="Twitter"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{
@@ -71,7 +71,7 @@ const Footer = () => (
                 aria-label="LinkedIn"
                 rel="noreferrer"
                 target="_blank"
-                className="m-3"
+                className="mx-3"
             >
                 <IconContext.Provider
                     value={{

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
-import './timer.styles.css';
+import './styles.css';
 
 export default function Countdown(props) {
     const { timeInSeconds, onComplete } = props;
@@ -31,7 +31,11 @@ export default function Countdown(props) {
         return `${min.padStart(2, '0')}:${seconds.padStart(2, '0')}`;
     };
 
-    return <>{convert(time)}</>;
+    return (
+        <div className="countdown d-flex justify-content-center align-items-center py-2 px-3">
+            {convert(time)}
+        </div>
+    );
 }
 
 Countdown.defaultProps = {
