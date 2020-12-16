@@ -27,7 +27,7 @@ body {
 }
 
 .bg-div {
-    background-image: url('./assets/LandingPage/background.svg');
+    background-image: url('./assets/LandingPage/bg_ccs.png');
     background-repeat: repeat-x;
     opacity: 0.3;
     height: 100%;

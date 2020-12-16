@@ -2,30 +2,19 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import './card.styles.css';
 
 const DomainCard = (props) => (
-    <Col>
-        <Card
-            style={{
-                width: '35rem',
-                height: '45rem',
-                padding: '5rem',
-                marginBottom: 20,
-                backgroundColor: '#0A1138',
-                borderRadius: 22,
-            }}
-        >
+    <Col xs={12} sm={6} lg={3} className="d-flex justify-content-center align-items-center">
+        <Card className="card text-center">
             <Card.Img
                 variant="top"
-                style={{ width: '90%', height: '90%' }}
                 src={props.imgURL}
+                className="card-image"
             />
             <Card.Body>
-                <Card.Title
-                    className="text-center"
-                    style={{ color: '#F2A62C' }}
-                >
-                    <h2>{props.domain}</h2>
+                <Card.Title className="text-center card-title">
+                    {props.domain}
                 </Card.Title>
             </Card.Body>
         </Card>

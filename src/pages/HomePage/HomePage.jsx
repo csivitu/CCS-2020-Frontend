@@ -5,6 +5,8 @@ import './HomePage.styles.css';
 import dataBundle from './data';
 import DomainCard from '../../components/card/card.component';
 import Timer from '../../components/countdown';
+import Header from '../../components/header/header.component';
+import Footer from '../../components/footer/footer.component';
 
 function createCard(data) {
     return (
@@ -13,32 +15,40 @@ function createCard(data) {
 }
 
 const HomePage = () => (
-    <div className="all">
-        <Container>
-            <Row className="text-center">
-                <div className="mt-5 mx-auto">
-                    <a
-                        href="https://csivit.com"
-                        rel="noreferrer"
-                        target="_blank"
-                    >
-                        <img src={csilogo} alt="CSIVIT" className="csi-logo" />
-                    </a>
+    <>
+        <Header />
+        <div className="all">
+            <Container>
+                <Row className="text-center">
+                    <div className="mt-5 mx-auto">
+                        <a
+                            href="https://csivit.com"
+                            rel="noreferrer"
+                            target="_blank"
+                        >
+                            <img
+                                src={csilogo}
+                                alt="CSIVIT"
+                                className="csi-logo"
+                            />
+                        </a>
+                    </div>
+                    <Timer />
+                </Row>
+                <Row className="domains">
+                    <div className="m-auto">
+                        <b>Choose your Domain</b>
+                    </div>
+                </Row>
+            </Container>
+            <Row className="d-flex justify-content-between cards mx-auto">
+                <div className="mx-auto mt-5">
+                    <Row>{dataBundle.map(createCard)}</Row>
                 </div>
-                <Timer />
             </Row>
-            <Row className="domains">
-                <div className="m-auto">
-                    <b>Choose your Domain</b>
-                </div>
-            </Row>
-        </Container>
-        <Row className="d-flex justify-content-between cards">
-            <div className="mx-auto">
-                <Row>{dataBundle.map(createCard)}</Row>
-            </div>
-        </Row>
-    </div>
+        </div>
+        <Footer />
+    </>
 );
 
 export default HomePage;

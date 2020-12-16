@@ -83,7 +83,7 @@ const LandingPage = (props) => {
                                         />
                                     </>
                                 ) : (
-                                    'Register Now!'
+                                    ''
                                 );
                                 return notAllowed
                                     ? 'Registration failed! CCS by CSI-VIT is only for freshers.'

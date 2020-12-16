@@ -1,7 +1,7 @@
-import management from '../../assets/HomePage/management.svg';
-import tech from '../../assets/HomePage/tech.svg';
-import video from '../../assets/HomePage/video.svg';
-import design from '../../assets/HomePage/design.svg';
+import management from '../../assets/HomePage/management.png';
+import tech from '../../assets/HomePage/tech.png';
+import video from '../../assets/HomePage/video.png';
+import design from '../../assets/HomePage/design.png';
 
 const data = [
     {
