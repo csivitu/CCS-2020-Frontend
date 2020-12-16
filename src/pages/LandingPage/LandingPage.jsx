@@ -52,13 +52,15 @@ const LandingPage = (props) => {
                                     lot of projects and hackathons, to help push
                                     technology forward.
                                 </h4>
-                                <Button
-                                    size="lg"
-                                    className="register"
-                                    onClick={() => history.push('/login')}
-                                >
-                                    REGISTER
-                                </Button>
+                                {loggedIn || (
+                                    <Button
+                                        size="lg"
+                                        className="register"
+                                        onClick={() => history.push('/login')}
+                                    >
+                                        REGISTER
+                                    </Button>
+                                )}
                             </div>
                         </div>
                     </Col>
