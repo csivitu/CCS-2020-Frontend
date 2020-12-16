@@ -20,7 +20,7 @@ const HomePage = () => (
         <div className="all">
             <Container>
                 <Row className="text-center">
-                    <div className="mt-5 mx-auto">
+                    <div className="mt-3 mx-auto">
                         <a
                             href="https://csivit.com"
                             rel="noreferrer"
@@ -36,7 +36,7 @@ const HomePage = () => (
                     <Timer />
                 </Row>
                 <Row className="domains">
-                    <div className="m-auto">
+                    <div className="mx-auto mt-3">
                         <b>Choose your Domain</b>
                     </div>
                 </Row>
