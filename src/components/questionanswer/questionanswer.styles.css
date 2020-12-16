@@ -1,0 +1,14 @@
+.question-answer{
+    margin-top: 1rem;
+    background-color: #0A1138;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;  
+    color: white;
+    padding: 2rem 8rem 2rem 8rem;
+    border-radius: 22px;
+}
+
+.question-container{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
