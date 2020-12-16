@@ -78,7 +78,6 @@ const LandingPage = (props) => {
                                             You have registered successfully
                                         </h3>
                                         <br />
-                                        <br />
                                         CCS Starts In
                                         <br />
                                         <Timer
