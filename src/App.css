@@ -1,36 +1,44 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
-    font-size: 62.5%; /*10px*/
+    font-size: 16px;
     height: 100vh;
-    /* overflow: hidden !important; */
 }
 
 body {
-    font-size: 62.5%; /*10px*/
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* overflow: hidden; */
+    background-color: #18204F;
 }
 
 #root {
     position: relative;
     overflow: hidden;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+}
+
+.navbar-div,
+.footer-div {
+    height: 60px;
+    width: 100%;
+    background-color: #0a1138;
 }
 
 .bg-div {
     background-image: url('./assets/LandingPage/background.svg');
     background-repeat: repeat-x;
+    opacity: 0.3;
     height: 100%;
     width: 507600px;
     position: absolute;
     animation: slide 120s linear infinite;
     z-index: -1000;
+}
+
+.red {
+    color: #D44529;
 }
 
 @keyframes slide {
@@ -47,79 +55,50 @@ body {
         opacity: 0;
         transform: translateX(-1000rem);
     }
-
     80% {
         transform: translateX(1rem);
     }
-
     100% {
         opacity: 1;
         transform: translate(0);
     }
 }
 
-@media only screen and (max-width: 1200px) {
-	html,body {
-		font-size: 45%;
-	}
+@media only screen and (min-width: 1920px) {
+    html,
+    body {
+        font-size: 22px;
+    }
 }
 
-@media only screen and (max-width: 1000px) {
-	html,body {
-		font-size: 40%;
-	}
+@media (max-width: 813px) {
+    html,
+    body {
+        font-size: 12px;
+    }
 }
 
-@media only screen and (max-width: 900px) {
-	html,body {
-		font-size: 35%;
-	}
-}
-
-@media only screen and (max-width: 750px) {
-	html,body {
-		font-size: 40%;
-	}
-
-}
-
-@media only screen and (max-width: 600px) {
-	html,body {
-		font-size: 40%;
-	}
-}
-
-@media only screen and (max-width: 450px) {
-	html, body {
-		font-size: 30%;
-	}
-
-}
-
-@media only screen and (max-width: 300px) {
-	html, body {
-		font-size: 25%;
-	}
-
-}
 
 /* Works on Firefox */
+
 * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,165,0,0.5) transparent;
-  }
-  
-  /* Works on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
+    scrollbar-color: rgba(255, 165, 0, 0.5) transparent;
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
     width: 12px;
-  }
-  
-  *::-webkit-scrollbar-track {
+}
+
+*::-webkit-scrollbar-track {
     background: transparent;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: rgba(255,165,0,0.5);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 165, 0, 0.5);
     border-radius: 2000px;
     border: 3px solid transparent;
-  }
+}

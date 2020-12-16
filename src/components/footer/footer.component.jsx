@@ -7,19 +7,20 @@ import {
 import './footer.styles.css';
 
 const Footer = () => (
-    <div className="footer-div">
-        <div className="icons-div">
+    <div className="d-flex justify-content-center footer-div">
+        <div className="icons-div d-flex justify-content-between">
             <a
                 href="https://www.instagram.com/csivitu/"
                 aria-label="Instagram"
                 rel="noreferrer"
                 target="_blank"
+                className="m-3"
             >
                 <IconContext.Provider
                     value={{
                         color: 'white',
                         className: 'csi-instagram',
-                        size: '3rem',
+                        size: '2rem',
                     }}
                 >
                     <div>
@@ -32,12 +33,13 @@ const Footer = () => (
                 aria-label="Facebook"
                 rel="noreferrer"
                 target="_blank"
+                className="m-3"
             >
                 <IconContext.Provider
                     value={{
                         color: 'white',
                         className: 'csi-facebook',
-                        size: '3rem',
+                        size: '2rem',
                     }}
                 >
                     <div>
@@ -50,12 +52,13 @@ const Footer = () => (
                 aria-label="Twitter"
                 rel="noreferrer"
                 target="_blank"
+                className="m-3"
             >
                 <IconContext.Provider
                     value={{
                         color: 'white',
                         className: 'csi-twitter',
-                        size: '3rem',
+                        size: '2rem',
                     }}
                 >
                     <div>
@@ -68,12 +71,13 @@ const Footer = () => (
                 aria-label="LinkedIn"
                 rel="noreferrer"
                 target="_blank"
+                className="m-3"
             >
                 <IconContext.Provider
                     value={{
                         color: 'white',
                         className: 'csi-linkedin',
-                        size: '3rem',
+                        size: '2rem',
                     }}
                 >
                     <div>
