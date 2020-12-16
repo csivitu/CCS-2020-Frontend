@@ -1,11 +1,6 @@
-p {
-    font-size: 36px;
+.countdown {
     color: #F2A62C;
-    margin: 0;
-}
-
-.timer {
     background-color: #0A1138;
-    padding: 2rem;
     border-radius: 22px;
+    font-size: 2rem;
 }

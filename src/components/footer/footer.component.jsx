@@ -8,7 +8,7 @@ import './footer.styles.css';
 
 const Footer = () => (
     <div className="d-flex justify-content-center footer-div">
-        <div className="icons-div d-flex mb-3 my-auto">
+        <div className="icons-div d-flex align-items-center mb-3 my-auto">
             <a
                 href="https://www.instagram.com/csivitu/"
                 aria-label="Instagram"

@@ -74,6 +74,9 @@ const LandingPage = (props) => {
                                 }
                                 const r = loggedIn ? (
                                     <>
+                                        You have registered successfully
+                                        <br />
+                                        <br />
                                         CCS Starts In
                                         <br />
                                         <Timer
