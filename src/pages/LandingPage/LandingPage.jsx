@@ -28,11 +28,13 @@ const LandingPage = (props) => {
                         className="d-flex justify-content-center align-items-center text-center"
                     >
                         <div className="core-div text-left">
-                            CORE
-                            <br />
-                            COMMITTEE
-                            <br />
-                            SELECTIONS
+                            <strong>
+                                CORE
+                                <br />
+                                COMMITTEE
+                                <br />
+                                SELECTIONS
+                            </strong>
                         </div>
                     </Col>
                     <Col
