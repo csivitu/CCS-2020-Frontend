@@ -14,6 +14,7 @@ import './App.css';
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [notAllowed, setNotAllowed] = useState(false);
+    const [verified, setVerified] = useState(true);
 
     const logout = () => {
         localStorage.removeItem('token');
@@ -30,6 +31,10 @@ function App() {
             return;
         }
 
+        if (!user.verificationStatus) {
+            setVerified(false);
+            return;
+        }
         if (user.regNo.startsWith('20') || user.scope.indexOf('csi') > -1) {
             // store in redux
             setLoggedIn(true);
@@ -57,6 +62,7 @@ function App() {
             {/* <ComingSoon /> */}
             <Route exact path="/">
                 <LandingPage
+                    verified={verified}
                     loggedIn={loggedIn}
                     notAllowed={notAllowed}
                 />

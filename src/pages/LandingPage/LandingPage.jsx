@@ -13,7 +13,7 @@ import Timer from '../../components/timer';
 
 const LandingPage = (props) => {
     const history = useHistory();
-    const { loggedIn, notAllowed } = props;
+    const { loggedIn, notAllowed, verified } = props;
     return (
         <>
             <Header />
@@ -65,6 +65,9 @@ const LandingPage = (props) => {
                     <h2 className="mx-auto red text-center">
                         <b>
                             {(() => {
+                                if (!verified) {
+                                    return 'Please verify your email to continue.';
+                                }
                                 const r = loggedIn ? (
                                     <>
                                         CCS Starts In
@@ -101,11 +104,13 @@ const LandingPage = (props) => {
 LandingPage.propTypes = {
     loggedIn: propTypes.bool,
     notAllowed: propTypes.bool,
+    verified: propTypes.bool,
 };
 
 LandingPage.defaultProps = {
     loggedIn: false,
     notAllowed: false,
+    verified: true,
 };
 
 export default LandingPage;
