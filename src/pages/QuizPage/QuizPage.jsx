@@ -15,7 +15,7 @@ const QuizPage = () => (
         <div className="all">
             <Container className="d-flex flex-column justify-content-around">
                 <Row className="text-center">
-                    <div className="mt-5 mx-auto">
+                    <div className="mt-2 mb-5 mx-auto">
                         <a
                             href="https://csivit.com"
                             rel="noreferrer"
@@ -79,30 +79,25 @@ const QuizPage = () => (
                 </Row>
                 <Row className="d-flex justify-content-between">
                     <div>
-                        <Button className="quiz-button mr-2" size="lg">
+                        <Button className="quiz-button mr-2 px-3" size="lg">
                             <b>PREVIOUS</b>
                         </Button>
-                        <Button className="quiz-button" size="lg">
+                        <Button className="quiz-button px-3" size="lg">
                             <b>NEXT</b>
                         </Button>
                     </div>
 
-                    <Button
-                        className="quiz-button"
-                        style={{
-                            backgroundColor: '#D44529',
-                            color: 'white',
-                            border: '0',
-                        }}
-                        size="lg"
-                    >
+                    <Button className="submit-button px-3" size="lg">
                         <b>SUBMIT</b>
                     </Button>
                 </Row>
-                <Row className="d-flex question-button-container mt-4">
+                <Row className="d-flex question-button-container justify-content-around py-4">
                     <div className="question-numbers">
                         {numbers.map((number) => (
-                            <Button className="question-button" key={number}>
+                            <Button
+                                className="question-button mx-2"
+                                key={number}
+                            >
                                 <b>{number}</b>
                             </Button>
                         ))}
