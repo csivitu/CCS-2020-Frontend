@@ -4,7 +4,7 @@ import csilogo from '../../assets/ComingSoonPage/csilogo.png';
 import './HomePage.styles.css';
 import dataBundle from './data';
 import DomainCard from '../../components/card/card.component';
-import Timer from '../../components/timer/timer.component';
+import Timer from '../../components/countdown';
 
 function createCard(data) {
     return (
