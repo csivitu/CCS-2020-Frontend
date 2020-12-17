@@ -7,7 +7,7 @@ import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
 import DomainPage from './pages/DomainPage';
 import QuizPage from './pages/QuizPage/QuizPage';
-import DiscordPage from './pages/DiscordPage/DiscordPage';
+import SlotPage from './pages/SlotPage/SlotPage';
 
 import './App.css';
 import SelectedPage from './pages/SelectedPage/SelectedPage';
@@ -77,14 +77,14 @@ function App() {
             <Route exact path="/quiz">
                 <QuizPage />
             </Route>
-            <Route exact path="/discord">
-                <DiscordPage />
-            </Route>
             <Route exact path="/selections">
                 <SelectedPage />
             </Route>
             <Route exact path="/thankyou">
                 <ThankYouPage />
+            </Route>
+            <Route exact path="/slot">
+                <SlotPage />
             </Route>
         </>
     );
