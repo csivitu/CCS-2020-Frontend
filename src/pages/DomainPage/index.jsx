@@ -6,13 +6,27 @@ import dataBundle from './data';
 import DomainCard from '../../components/card/card.component';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
+import setDomainProgress from '../../redux/domain/domain.actions';
 
 function createCard(data) {
     return (
         <DomainCard key={data.id} domain={data.domain} imgURL={data.imgURL} />
     );
 }
+const currentStatus = ({ setDomainProgress }) => {
+    // I not get here, pls see
 
+    const domainStatus = (domainName) => {
+        if (this.state[domainName] === 'notAttempted') {
+            return '';
+        } if (this.state[domainName] === 'ended') {
+            console.log(domainName);
+            return 'ended';
+        } if (this.state[domainName] === 'progress') {
+            return 'inProgress';
+        }
+    };
+};
 const HomePage = () => (
     <>
         <Header />
