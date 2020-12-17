@@ -31,11 +31,11 @@ const QuizPage = () => (
                 </Row>
                 <Row className="d-flex justify-content-between align-items-center flex-xs-column">
                     <div className="domain">
-                        <h1>
+                        <h2>
                             Domain:
                             {' '}
                             <b>DESIGN</b>
-                        </h1>
+                        </h2>
                     </div>
 
                     <div className="d-flex justify-content-around">
@@ -45,7 +45,7 @@ const QuizPage = () => (
                             alt="Timer"
                         />
                         <Countdown
-                            timeInSeconds={6000}
+                            timeInSeconds={1800}
                             onComplete={() => alert('TIME KHATAM HOGAYA SORRY')}
                         />
                     </div>
