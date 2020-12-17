@@ -1,0 +1,62 @@
+.slot-card-div {
+    height: 23rem;
+    max-width: 25rem;
+    min-width: 20rem;
+    padding: 0.5rem;
+    margin-bottom: 20px;
+    background-color: #0a1138;
+    border-radius: 22px;
+    cursor: default;
+    transition: all 0.3s ease-in-out;
+}
+
+.card-slot-title {
+    color: white;
+    margin-top: 10px;
+}
+
+.slot-button {
+    background-color: #f56531;
+    border: 0px;
+    width: 7rem;
+    height: 2.5rem;
+}
+
+input[type='radio'] {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #0a1138;
+    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+input[type='radio']:focus {
+    /*no need, if you don't disable default appearance*/
+    outline: none;
+ /*to remove the square border on focus*/
+}
+
+input[type='radio']:checked {
+    /*no need, if you don't disable default appearance*/
+    background-color: #18204f;
+}
+
+.date {
+    position: relative;
+}
+
+.date-text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-60%);
+}
+
+.december {
+    background-color: #18204f;
+    font-size: 1.2rem;
+}

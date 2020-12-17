@@ -4,7 +4,6 @@ import csilogo from '../../assets/ComingSoonPage/csilogo.png';
 import './styles.css';
 import dataBundle from './data';
 import DomainCard from '../../components/card/card.component';
-import Timer from '../../components/countdown';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 
@@ -33,7 +32,6 @@ const HomePage = () => (
                             />
                         </a>
                     </div>
-                    <Timer />
                 </Row>
                 <Row className="domains">
                     <div className="mx-auto mt-3">

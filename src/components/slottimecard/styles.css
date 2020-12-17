@@ -1,0 +1,13 @@
+#times {
+	background-color: transparent;
+	border: none;
+}
+
+#times:focus {
+	outline: none;
+}
+
+option:active, option:visited, option:focus, option:hover {
+	background-color: #18204f;
+	color: #f2a62c
+}

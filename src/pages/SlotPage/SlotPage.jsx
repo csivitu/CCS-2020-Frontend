@@ -3,7 +3,8 @@ import { Container, Row, Button } from 'react-bootstrap';
 import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 import Logo from '../../components/logo/index';
-import SlotCard from '../../components/slotcard/card';
+import SlotDateCard from '../../components/slotdatecard';
+import SlotTimeCard from '../../components/slottimecard';
 import './SlotPage.styles.css';
 
 const SlotPage = () => (
@@ -27,12 +28,12 @@ const SlotPage = () => (
 
                 </Row>
                 <Row className="justify-content-around">
-                    <SlotCard title="Choose DATE" />
-                    <SlotCard title="Choose TIME" />
+                    <SlotDateCard />
+                    <SlotTimeCard />
                 </Row>
                 <Row className="text-center">
                     <div className="mx-auto mb-3">
-                        <Button className="slot-button">SUBMIT</Button>
+                        <Button className="submit-button px-3">SUBMIT</Button>
 
                     </div>
                 </Row>
