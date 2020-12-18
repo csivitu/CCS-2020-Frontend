@@ -3,3 +3,9 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+.loader {
+    width: 20%;
+    height: auto;
+    max-width: 100px;
+}

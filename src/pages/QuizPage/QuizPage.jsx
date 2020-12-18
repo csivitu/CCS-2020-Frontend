@@ -161,9 +161,7 @@ const QuizPage = () => {
                         {`The ${domainInProg} domain is already in progress.`}
                     </h1>
                     <h3>
-                        To attempt
-                        {domain}
-                        , you need to finish that first.
+                        {`To attempt ${domain} you need to finish that first`}
                     </h3>
                     <br />
                     <Button
@@ -248,7 +246,8 @@ const QuizPage = () => {
                             <br />
                             <div
                                 dangerouslySetInnerHTML={{
-                                    __html: questions[currentQuestion - 1].question,
+                                    __html:
+                                        questions[currentQuestion - 1].question,
                                 }}
                             />
                         </div>
