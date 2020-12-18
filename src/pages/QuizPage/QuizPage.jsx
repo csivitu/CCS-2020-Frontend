@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Button, Container, Row } from 'react-bootstrap';
+import { unwrapResult } from '@reduxjs/toolkit';
 import {
     updateQuestionAnswer,
     updateQuestionState,
@@ -75,8 +76,6 @@ const QuizPage = () => {
 
     const [timeOut, setTimeOut] = useState();
 
-    console.log('something');
-
     const handleAnswer = () => {
         if (!questions) return;
 
@@ -113,12 +112,13 @@ const QuizPage = () => {
             startQuizAsync({
                 domain,
             }),
-        );
+        )
+            .then(unwrapResult)
+            .then(({ responses }) => {
+                const ans = responses.map((r) => r.response || '');
+                setAnswers(ans);
+            });
     }, []);
-
-    // useEffect(() => {
-
-    // });
 
     if (isLoading) {
         return (

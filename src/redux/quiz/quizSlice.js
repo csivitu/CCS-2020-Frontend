@@ -34,8 +34,6 @@ export const quizSlice = createSlice({
             }
         },
         [startQuizAsync.fulfilled]: (state, action) => {
-            // const timer = null;
-            console.log(action.payload);
             if (!action.payload.success) {
                 state.errorMsg = action.payload.message;
                 state.domainInProg = action.payload.domain;
