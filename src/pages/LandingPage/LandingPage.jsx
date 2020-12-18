@@ -91,7 +91,7 @@ const LandingPage = (props) => {
                                                 <Timer
                                                     timeInDateFormat={
                                                         +new Date(
-                                                            'Dec 19, 2020 02:30:00',
+                                                            'Dec 19, 2020 08:00:00',
                                                         )
                                                     }
                                                 />
