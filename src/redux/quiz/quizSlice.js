@@ -39,6 +39,7 @@ export const quizSlice = createSlice({
             if (!action.payload.success) {
                 state.errorMsg = action.payload.message;
                 state.domainInProg = action.payload.domain;
+                state.isLoading = false;
             } else {
                 const timerStarted = new Date(
                     action.payload.time.timeStarted,
@@ -66,6 +67,7 @@ export const quizSlice = createSlice({
                 state.timeStarted = timerStarted;
                 state.timeEnded = timeEnded;
                 state.timeRemaining = timeRemaining;
+                state.isLoading = false;
             }
         },
     },

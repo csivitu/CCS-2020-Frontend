@@ -8,6 +8,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import DomainPage from './pages/DomainPage';
 import QuizPage from './pages/QuizPage/QuizPage';
 import SlotPage from './pages/SlotPage/SlotPage';
+// import Loading from './components/loading';
 
 import './App.css';
 import SelectedPage from './pages/SelectedPage/SelectedPage';

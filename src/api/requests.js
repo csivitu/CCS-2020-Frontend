@@ -21,8 +21,8 @@ const sendResponses = async ({ responses, domain }) => {
 };
 
 const startQuiz = async ({ domain }) => {
-    const res = await api.post('/start', { domain });
-    console.log('RRRRRR: ', res);
+    const res = await api.post('/start', { domain: domain.toLowerCase() });
+    console.log(res);
     res.data.domain = domain;
     return res.data;
 };

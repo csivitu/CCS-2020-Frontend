@@ -32,6 +32,7 @@ const QuizPage = ({ domain }) => {
     const dispatch = useDispatch();
     const currentQuestion = useSelector((state) => state.quiz.currentQuestion);
     const answer = useSelector((state) => state.quiz.answer);
+    const isLoading = useSelector((state) => state.quiz.isLoading);
 
     const hideNext = () => {
         if (currentQuestion === 10) {
@@ -98,12 +99,29 @@ const QuizPage = ({ domain }) => {
     };
 
     useEffect(() => {
-        dispatch(startQuizAsync({ domain }));
+        console.log('REACHED HERE ', domain);
+        dispatch(startQuizAsync({ domain: 'management' })).then(console.log);
     }, []);
 
     const errorMsg = useSelector((state) => state.quiz.errorMsg);
     const domainInProg = useSelector((state) => state.quiz.domainInProg);
     const questions = useSelector((state) => state.quiz.questions);
+
+    if (isLoading) {
+        return (
+            <>
+                <Header />
+                <div className="all">
+                    <Container>
+                        <Row className="text-center d-flex w-100">
+                            <h1 className="yellow">LOADING...</h1>
+                        </Row>
+                    </Container>
+                </div>
+                <Footer />
+            </>
+        );
+    }
 
     if (errorMsg === 'anotherDomainInProgress') {
         return (
