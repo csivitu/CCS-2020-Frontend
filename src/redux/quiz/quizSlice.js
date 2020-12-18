@@ -97,7 +97,8 @@ export const quizSlice = createSlice({
         updateQuestionAnswer: (state, action) => {
             // state.questions[action.payload.currentQuestion - 1] = action.payload.answer;
             const { questions } = state;
-            questions[action.payload.currentQuestion - 1] = action.payload.answer;
+            console.log(action.payload.currentQuestion);
+            questions[action.payload.currentQuestion - 1].response = action.payload.answer;
             state.questions = questions;
         },
     },

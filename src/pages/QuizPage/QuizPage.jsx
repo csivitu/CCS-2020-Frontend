@@ -1,17 +1,15 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/no-autofocus */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Button, Container, Row } from 'react-bootstrap';
-// import { unwrapResult } from '@reduxjs/toolkit';
 import {
+    updateQuestionAnswer,
     updateQuestionState,
-    updateAnswer,
     updateSavedStatus,
     sendResponsesAsync,
     startQuizAsync,
-    updateQuestionAnswer,
 } from '../../redux/quiz/quizSlice';
 import { endAttempt } from '../../redux/user/userSlice';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
@@ -32,13 +30,16 @@ import ThankYouPage from '../ThankYouPage/ThankYouPage';
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const QuizPage = () => {
     const dispatch = useDispatch();
+
     const currentQuestion = useSelector((state) => state.quiz.currentQuestion);
-    const answer = useSelector((state) => state.quiz.answer);
     const isLoading = useSelector((state) => state.quiz.isLoading);
     // const currentDomain = useSelector((state) => state.user.currentDomain);
     const errorMsg = useSelector((state) => state.quiz.errorMsg);
     const domainInProg = useSelector((state) => state.quiz.domainInProg);
     const questions = useSelector((state) => state.quiz.questions);
+    const timeEnded = useSelector((state) => state.quiz.timeEnded);
+
+    const [answers, setAnswers] = useState(['', '', '', '', '', '', '', '', '', '']);
 
     const { domain } = useParams();
 
@@ -69,8 +70,7 @@ const QuizPage = () => {
     };
 
     const saveAnswers = () => {
-        const responses = useSelector((state) => state.quiz.responses);
-        dispatch(sendResponsesAsync({ responses, domain }));
+        dispatch(sendResponsesAsync({ responses: {}, domain }));
     };
 
     let timeout;
@@ -80,15 +80,20 @@ const QuizPage = () => {
 
         clearTimeout(timeout);
         timeout = setTimeout(() => {
+            dispatch(updateQuestionAnswer(
+                { answer: answers[currentQuestion - 1], currentQuestion },
+            ));
             saveAnswers();
+            // dispatch(updateQuestionAnswer({ answer, currentQuestion }));
+            dispatch(updateSavedStatus(false));
         }, 2000);
-
-        dispatch(updateSavedStatus(false));
-        dispatch(updateQuestionAnswer(answer, currentQuestion));
     };
 
     const handleChange = (e) => {
-        dispatch(updateAnswer(e.target.value));
+        const updatedAns = answers;
+        updatedAns[currentQuestion - 1] = e.target.value;
+        setAnswers(updatedAns);
+
         handleAnswer();
     };
 
@@ -99,7 +104,6 @@ const QuizPage = () => {
 
     const viewStatus = (number) => {
         if (number === currentQuestion) return 'current';
-        if (answer !== '') return 'attempted';
         return '';
     };
 
@@ -176,13 +180,15 @@ const QuizPage = () => {
                                 alt="Timer"
                             />
                             <Countdown
-                                timeInSeconds={600}
-                                onComplete={() => alert('TIME KHATAM HOGAYA SORRY')}
+                                timeInSeconds={Math.floor(
+                                    (timeEnded - +new Date()).toString() / 1000,
+                                )}
+                                onComplete={() => console.log('Time Over')}
                             />
                         </div>
                     </Row>
                     <Row>
-                        <div className="question mt-3 px-5 py-5">
+                        <div className="question mt-3 px-5 py-5 w-100">
                             <div className="orange-question-div" />
                             <b className=" heading question-heading">
                                 {`Question ${currentQuestion}:`}
@@ -201,6 +207,7 @@ const QuizPage = () => {
                                 id=""
                                 cols="30"
                                 rows="10"
+                                value={answers ? answers[currentQuestion - 1] : ''}
                                 onChange={handleChange}
                                 autoFocus
                             />
