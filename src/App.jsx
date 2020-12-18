@@ -21,6 +21,7 @@ function App() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [notAllowed, setNotAllowed] = useState(false);
     const [verified, setVerified] = useState(true);
+    const [isCSI, setIsCSI] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -50,9 +51,12 @@ function App() {
             return;
         }
         if (user.regNo.startsWith('20') || user.scope.indexOf('csi') > -1) {
-            // store in redux
             setLoggedIn(true);
             dispatch(updateLogin(true));
+
+            if (user.scope.indexOf('csi') > -1) {
+                setIsCSI(true);
+            }
             return;
         }
 
@@ -80,9 +84,10 @@ function App() {
                     verified={verified}
                     loggedIn={loggedIn}
                     notAllowed={notAllowed}
+                    isCSI={isCSI}
                 />
             </Route>
-            {isLoggedIn && (
+            {isLoggedIn && isCSI && (
                 <>
                     <Route exact path="/domains">
                         <DomainPage />
