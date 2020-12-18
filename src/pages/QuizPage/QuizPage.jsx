@@ -70,23 +70,24 @@ const QuizPage = () => {
     };
 
     const saveAnswers = () => {
-        dispatch(sendResponsesAsync({ responses: {}, domain }));
+        dispatch(sendResponsesAsync({ responses: questions, domain }));
     };
 
-    let timeout;
+    const [timeOut, setTimeOut] = useState();
+
+    console.log('something');
 
     const handleAnswer = () => {
         if (!questions) return;
 
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
+        if (timeOut) clearTimeout(timeOut);
+        setTimeOut(setTimeout(() => {
             dispatch(updateQuestionAnswer(
                 { answer: answers[currentQuestion - 1], currentQuestion },
             ));
             saveAnswers();
-            // dispatch(updateQuestionAnswer({ answer, currentQuestion }));
             dispatch(updateSavedStatus(false));
-        }, 2000);
+        }, 2000));
     };
 
     const handleChange = (e) => {
@@ -114,6 +115,10 @@ const QuizPage = () => {
             }),
         );
     }, []);
+
+    // useEffect(() => {
+
+    // });
 
     if (isLoading) {
         return (
