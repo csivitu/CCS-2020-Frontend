@@ -8,7 +8,6 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import {
     updateQuestionAnswer,
     updateQuestionState,
-    updateSavedStatus,
     sendResponsesAsync,
     startQuizAsync,
 } from '../../redux/quiz/quizSlice';
@@ -31,6 +30,8 @@ import ThankYouPage from '../ThankYouPage/ThankYouPage';
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const QuizPage = () => {
     const dispatch = useDispatch();
+
+    const [saved, setSaved] = useState(true);
 
     const currentQuestion = useSelector((state) => state.quiz.currentQuestion);
     const isLoading = useSelector((state) => state.quiz.isLoading);
@@ -70,8 +71,8 @@ const QuizPage = () => {
         dispatch(updateQuestionState(number));
     };
 
-    const saveAnswers = () => {
-        dispatch(sendResponsesAsync({ responses: questions, domain }));
+    const saveAnswers = (ques) => {
+        dispatch(sendResponsesAsync({ responses: ques, domain }));
     };
 
     const [timeOut, setTimeOut] = useState();
@@ -81,11 +82,14 @@ const QuizPage = () => {
 
         if (timeOut) clearTimeout(timeOut);
         setTimeOut(setTimeout(() => {
+            const ques = JSON.parse(JSON.stringify(questions));
+            ques[currentQuestion - 1].response = answers[currentQuestion - 1];
+            saveAnswers(ques);
+
             dispatch(updateQuestionAnswer(
                 { answer: answers[currentQuestion - 1], currentQuestion },
             ));
-            saveAnswers();
-            dispatch(updateSavedStatus(false));
+            setSaved(true);
         }, 2000));
     };
 
@@ -93,6 +97,7 @@ const QuizPage = () => {
         const updatedAns = answers;
         updatedAns[currentQuestion - 1] = e.target.value;
         setAnswers(updatedAns);
+        setSaved(false);
 
         handleAnswer();
     };
@@ -115,6 +120,9 @@ const QuizPage = () => {
         )
             .then(unwrapResult)
             .then(({ responses }) => {
+                if (!responses) {
+                    return;
+                }
                 const ans = responses.map((r) => r.response || '');
                 setAnswers(ans);
             });
@@ -179,6 +187,15 @@ const QuizPage = () => {
                         </div>
 
                         <div className="d-flex justify-content-around">
+                            <div
+                                className="align-self-center mr-3 p-2"
+                                style={{
+                                    backgroundColor: saved ? 'green' : '#f56531',
+                                    borderRadius: '8px',
+                                }}
+                            >
+                                {saved ? 'Saved' : 'Saving...'}
+                            </div>
                             <img
                                 src={timeIcon}
                                 className="mr-3 timer-icon"

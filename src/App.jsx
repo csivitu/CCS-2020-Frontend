@@ -15,6 +15,7 @@ import SlotPage from './pages/SlotPage/SlotPage';
 import './App.css';
 import SelectedPage from './pages/SelectedPage/SelectedPage';
 import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
+import Logout from './pages/Logout';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -95,6 +96,9 @@ function App() {
                     </Route>
                     <Route exact path="/slot">
                         <SlotPage />
+                    </Route>
+                    <Route exact path="/logout">
+                        <Logout />
                     </Route>
                 </>
             )}
