@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api, { setAuthToken } from './api/api';
 import { updateLogin, setUsername } from './redux/user/userSlice';
@@ -22,6 +22,7 @@ function App() {
     const [notAllowed, setNotAllowed] = useState(false);
     const [verified, setVerified] = useState(true);
     const [isCSI, setIsCSI] = useState(false);
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -29,6 +30,9 @@ function App() {
 
     const logout = () => {
         localStorage.removeItem('token');
+        dispatch(updateLogin(false));
+        dispatch(setUsername(''));
+        history.push('/');
     };
 
     const onLogin = async () => {
