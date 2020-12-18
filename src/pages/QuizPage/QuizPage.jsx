@@ -19,6 +19,7 @@ import Header from '../../components/header/header.component';
 import Footer from '../../components/footer/footer.component';
 import './QuizPage.styles.css';
 import ThankYouPage from '../ThankYouPage/ThankYouPage';
+import Loading from '../../components/loading';
 
 // // create your forceUpdate hook
 // function useForceUpdate() {
@@ -130,17 +131,7 @@ const QuizPage = () => {
 
     if (isLoading) {
         return (
-            <>
-                <Header />
-                <div className="all">
-                    <Container>
-                        <Row className="text-center d-flex w-100">
-                            <h1 className="yellow">LOADING...</h1>
-                        </Row>
-                    </Container>
-                </div>
-                <Footer />
-            </>
+            <Loading />
         );
     }
 

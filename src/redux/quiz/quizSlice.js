@@ -46,21 +46,6 @@ export const quizSlice = createSlice({
                     action.payload.time.timeEnded,
                 ).getTime();
                 const timeRemaining = timeEnded - Date.now();
-                // timer = setInterval(() => {
-                //     let t = state.timeRemaining - 500;
-                //     if (t < 0) {
-                //         t = 0;
-                //         clearInterval(timer);
-                //         endQuiz(action.payload.domain).then(() => {
-                //             state.errorMsg = 'quizAlreadyAttempted';
-                //             sendResponses({
-                //                 responses: state.questions,
-                //                 domain: action.payload.domain,
-                //             });
-                //         });
-                //     }
-                //     state.timeRemaining = t;
-                // }, 500);
                 state.questions = action.payload.responses;
                 state.domainInProg = action.payload.domain;
                 state.timeStarted = timerStarted;

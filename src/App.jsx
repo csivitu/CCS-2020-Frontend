@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api, { setAuthToken } from './api/api';
-import { updateLogin } from './redux/user/userSlice';
+import { updateLogin, setUsername } from './redux/user/userSlice';
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
@@ -37,6 +37,8 @@ function App() {
             `${process.env.REACT_APP_ACCOUNTS_URL}/user`,
         );
         const { user, success } = response.data;
+
+        dispatch(setUsername(user.username));
 
         if (!success) {
             logout();

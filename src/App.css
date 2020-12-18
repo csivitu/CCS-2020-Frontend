@@ -42,6 +42,19 @@ body {
     color: #f2a62c;
 }
 
+.white {
+    color: white;
+}
+
+a, a:hover, a:active, a:focus, a:visited{
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #f2a62c;
+}
+
 @keyframes slide {
     0% {
         transform: translate3d(0, 0, 0);

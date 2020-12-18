@@ -15,6 +15,7 @@ export const userSlice = createSlice({
         video: 'notAttempted',
         currentDomain: undefined,
         isLoggedIn: false,
+        username: '',
     },
     extraReducers: {
         [fetchDomainStatus.fulfilled]: (state, action) => {
@@ -45,11 +46,14 @@ export const userSlice = createSlice({
         updateLogin: (state, action) => {
             state.isLoggedIn = action.payload;
         },
+        setUsername: (state, action) => {
+            state.username = action.payload;
+        },
     },
 });
 
 export const {
-    startAttempt, endAttempt, updateCurrentDomain, updateLogin,
+    startAttempt, endAttempt, updateCurrentDomain, updateLogin, setUsername,
 } = userSlice.actions;
 
 export default userSlice.reducer;
