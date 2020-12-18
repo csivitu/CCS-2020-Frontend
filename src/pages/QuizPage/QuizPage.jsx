@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { Button, Container, Row } from 'react-bootstrap';
 import { unwrapResult } from '@reduxjs/toolkit';
 import {
@@ -10,6 +10,7 @@ import {
     updateQuestionState,
     sendResponsesAsync,
     startQuizAsync,
+    endAttemptReq,
 } from '../../redux/quiz/quizSlice';
 import { endAttempt } from '../../redux/user/userSlice';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
@@ -30,6 +31,7 @@ import ThankYouPage from '../ThankYouPage/ThankYouPage';
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const QuizPage = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [saved, setSaved] = useState(true);
 
@@ -104,7 +106,9 @@ const QuizPage = () => {
 
     const handleSubmit = () => {
         saveAnswers();
-        dispatch(endAttempt());
+        dispatch(endAttempt(domain));
+        dispatch(endAttemptReq(domain));
+        history.push('/');
     };
 
     const viewStatus = (number) => {
@@ -144,12 +148,30 @@ const QuizPage = () => {
         );
     }
 
-    if (errorMsg === 'anotherDomainInProgress') {
+    if (errorMsg === 'anotherDomainInProgress' && domainInProg !== domain) {
         return (
-            <h1>
-                {`Another domain in progress ${domainInProg}`}
-                {' '}
-            </h1>
+            <div className="d-flex justify-content-center h-100 align-items-center">
+                <div className="text-center">
+                    <h1>
+                        {`The ${domainInProg} domain is already in progress.`}
+                    </h1>
+                    <h3>
+                        To attempt
+                        {' '}
+                        {domain}
+                        , you need to finish that first.
+                    </h3>
+                    <br />
+                    <Button
+                        style={{
+                            backgroundColor: '#F2A62C',
+                        }}
+                        onClick={() => { window.location.href = `/quiz/${domainInProg}`; }}
+                    >
+                        Go back
+                    </Button>
+                </div>
+            </div>
         );
     }
 

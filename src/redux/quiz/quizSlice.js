@@ -1,8 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {
+    endQuiz,
     sendResponses,
     startQuiz,
-    // endQuiz,
 } from '../../api/requests';
 
 export const sendResponsesAsync = createAsyncThunk(
@@ -11,6 +11,10 @@ export const sendResponsesAsync = createAsyncThunk(
 );
 
 export const startQuizAsync = createAsyncThunk('quiz/startQuiz', startQuiz);
+export const endAttemptReq = createAsyncThunk(
+    'quiz/endAttempt',
+    endQuiz,
+);
 
 export const quizSlice = createSlice({
     name: 'quiz',
@@ -68,6 +72,11 @@ export const quizSlice = createSlice({
                 state.timeRemaining = timeRemaining;
                 state.isLoading = false;
             }
+        },
+        [endAttemptReq.fulfilled]: (state) => {
+            state.timeEnded = new Date();
+            state.domainInProg = undefined;
+            state.timeRemaining = 0;
         },
     },
     reducers: {

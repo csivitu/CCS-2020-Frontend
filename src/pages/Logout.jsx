@@ -10,9 +10,5 @@ export default function Logout() {
         logout();
     }, []);
 
-    if (localStorage.getItem('token')) {
-        return <></>;
-    }
-
     return <Redirect to="/" />;
 }
