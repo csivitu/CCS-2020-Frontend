@@ -125,7 +125,7 @@ const QuizPage = () => {
         saveAnswers();
         dispatch(endAttempt(domain));
         dispatch(endAttemptReq(domain));
-        history.push('/');
+        history.push('/domains');
     };
 
     const viewStatus = (number) => {
@@ -208,7 +208,7 @@ const QuizPage = () => {
                             <h2>
                                 Domain:
                                 {' '}
-                                <b>{domain}</b>
+                                <b>{domain.toUpperCase()}</b>
                             </h2>
                         </div>
 
