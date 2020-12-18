@@ -13,7 +13,9 @@ import Timer from '../../components/timer';
 
 const LandingPage = (props) => {
     const history = useHistory();
-    const { loggedIn, notAllowed, verified } = props;
+    const {
+        loggedIn, notAllowed, verified, isCSI,
+    } = props;
     return (
         <>
             <Header />
@@ -43,7 +45,7 @@ const LandingPage = (props) => {
                     >
                         <div className="text-center">
                             <div className="recruiting text-left mx-auto">
-                                <h1 className="mb-3 red">
+                                <h1 className="mb-3 yellow">
                                     <strong>We are Recruiting</strong>
                                 </h1>
                                 <h4 className="content mb-4">
@@ -66,34 +68,41 @@ const LandingPage = (props) => {
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center mb-2">
-                    <h2 className="mx-auto red text-center">
+                    <h2 className="mx-auto yellow text-center">
                         <b>
                             {(() => {
                                 if (!verified) {
                                     return 'Please verify your email to continue.';
                                 }
-                                const r = loggedIn ? (
-                                    <>
-                                        <h3 style={{ color: 'white' }}>
-                                            You have registered successfully
-                                        </h3>
-                                        <br />
-                                        CCS Starts In
-                                        <br />
-                                        <Timer
-                                            timeInDateFormat={
-                                                +new Date(
-                                                    'Dec 19, 2020 02:00:00',
-                                                )
-                                            }
-                                        />
-                                    </>
-                                ) : (
-                                    ''
-                                );
+                                const r = () => {
+                                    if (loggedIn && isCSI) {
+                                        history.push('/domains');
+                                        return '';
+                                    }
+                                    if (loggedIn) {
+                                        return (
+                                            <>
+                                                <h3 style={{ color: 'white' }}>
+                                                    You have registered successfully
+                                                </h3>
+                                                <br />
+                                                CCS Starts In
+                                                <br />
+                                                <Timer
+                                                    timeInDateFormat={
+                                                        +new Date(
+                                                            'Dec 19, 2020 02:30:00',
+                                                        )
+                                                    }
+                                                />
+                                            </>
+                                        );
+                                    }
+                                    return '';
+                                };
                                 return notAllowed
                                     ? 'Registration failed! CCS by CSI-VIT is only for freshers.'
-                                    : r;
+                                    : r();
                             })()}
                         </b>
                     </h2>
@@ -113,12 +122,14 @@ LandingPage.propTypes = {
     loggedIn: propTypes.bool,
     notAllowed: propTypes.bool,
     verified: propTypes.bool,
+    isCSI: propTypes.bool,
 };
 
 LandingPage.defaultProps = {
     loggedIn: false,
     notAllowed: false,
     verified: true,
+    isCSI: false,
 };
 
 export default LandingPage;

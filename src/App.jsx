@@ -1,20 +1,31 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api, { setAuthToken } from './api/api';
+import { updateLogin } from './redux/user/userSlice';
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
-// import HomePage from './pages/HomePage/HomePage';
-// import QuizPage from './pages/QuizPage/QuizPage';
-// import DiscordPage from './pages/DiscordPage/DiscordPage';
+import DomainPage from './pages/DomainPage';
+import QuizPage from './pages/QuizPage/QuizPage';
+import SlotPage from './pages/SlotPage/SlotPage';
+// import Loading from './components/loading';
 
 import './App.css';
+import SelectedPage from './pages/SelectedPage/SelectedPage';
+import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
+import Logout from './pages/Logout';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [notAllowed, setNotAllowed] = useState(false);
     const [verified, setVerified] = useState(true);
+    const [isCSI, setIsCSI] = useState(false);
+
+    const dispatch = useDispatch();
+
+    const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
     const logout = () => {
         localStorage.removeItem('token');
@@ -23,7 +34,9 @@ function App() {
     const onLogin = async () => {
         const token = localStorage.getItem('token');
         setAuthToken(token);
-        const response = await api.get(`${process.env.REACT_APP_ACCOUNTS_URL}/user`);
+        const response = await api.get(
+            `${process.env.REACT_APP_ACCOUNTS_URL}/user`,
+        );
         const { user, success } = response.data;
 
         if (!success) {
@@ -36,8 +49,12 @@ function App() {
             return;
         }
         if (user.regNo.startsWith('20') || user.scope.indexOf('csi') > -1) {
-            // store in redux
             setLoggedIn(true);
+            dispatch(updateLogin(true));
+
+            if (user.scope.indexOf('csi') > -1) {
+                setIsCSI(true);
+            }
             return;
         }
 
@@ -65,19 +82,32 @@ function App() {
                     verified={verified}
                     loggedIn={loggedIn}
                     notAllowed={notAllowed}
+                    isCSI={isCSI}
                 />
             </Route>
-            {/* <Route exact path="/domains">
-                <HomePage />
-            </Route>
-            <Route exact path="/quiz">
-                <QuizPage />
-            </Route>
-            <Route exact path="/discord">
-                <DiscordPage />
-            </Route> */}
+            {isLoggedIn && isCSI && (
+                <>
+                    <Route exact path="/domains">
+                        <DomainPage />
+                    </Route>
+                    <Route exact path="/quiz/:domain">
+                        <QuizPage />
+                    </Route>
+                    <Route exact path="/selections">
+                        <SelectedPage />
+                    </Route>
+                    <Route exact path="/thankyou">
+                        <ThankYouPage />
+                    </Route>
+                    <Route exact path="/slot">
+                        <SlotPage />
+                    </Route>
+                    <Route exact path="/logout">
+                        <Logout />
+                    </Route>
+                </>
+            )}
         </>
-
     );
 }
 

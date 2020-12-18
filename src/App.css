@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background-color: #18204F;
+    color: white;
 }
 
 #root {
@@ -37,7 +38,7 @@ body {
     z-index: -1000;
 }
 
-.red {
+.yellow {
     color: #f2a62c;
 }
 
@@ -90,7 +91,7 @@ body {
 /* Works on Chrome, Edge, and Safari */
 
 *::-webkit-scrollbar {
-    width: 12px;
+    width: 8px;
 }
 
 *::-webkit-scrollbar-track {

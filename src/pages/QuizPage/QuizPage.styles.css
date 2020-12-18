@@ -11,7 +11,7 @@
 }
 
 .timer-icon {
-    height: 3.5rem;
+    height: 3rem;
     width: auto;
 }
 /* .timer-box{
@@ -23,7 +23,7 @@
 .question,
 .answer {
     background-color: #0a1138;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-family: 'Poppins', sans-serif;
     color: white;
     border-radius: 22px;
@@ -56,7 +56,7 @@
 .quiz-button{
     background-color: #F2A62C;
     color: #0A1138;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-radius: 32px;
     border: none;
 }
@@ -69,7 +69,7 @@
 .submit-button {
     background-color: #f56531;
     color: white;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-radius: 32px;
     border: none;
 }
