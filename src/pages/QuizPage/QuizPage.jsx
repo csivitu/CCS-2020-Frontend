@@ -44,7 +44,18 @@ const QuizPage = () => {
     const questions = useSelector((state) => state.quiz.questions);
     const timeEnded = useSelector((state) => state.quiz.timeEnded);
 
-    const [answers, setAnswers] = useState(['', '', '', '', '', '', '', '', '', '']);
+    const [answers, setAnswers] = useState([
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+        '',
+    ]);
 
     const { domain } = useParams();
 
@@ -84,16 +95,21 @@ const QuizPage = () => {
         if (!questions) return;
 
         if (timeOut) clearTimeout(timeOut);
-        setTimeOut(setTimeout(() => {
-            const ques = JSON.parse(JSON.stringify(questions));
-            ques[currentQuestion - 1].response = answers[currentQuestion - 1];
-            saveAnswers(ques);
+        setTimeOut(
+            setTimeout(() => {
+                const ques = JSON.parse(JSON.stringify(questions));
+                ques[currentQuestion - 1].response = answers[currentQuestion - 1];
+                saveAnswers(ques);
 
-            dispatch(updateQuestionAnswer(
-                { answer: answers[currentQuestion - 1], currentQuestion },
-            ));
-            setSaved(true);
-        }, 2000));
+                dispatch(
+                    updateQuestionAnswer({
+                        answer: answers[currentQuestion - 1],
+                        currentQuestion,
+                    }),
+                );
+                setSaved(true);
+            }, 2000),
+        );
     };
 
     const handleChange = (e) => {
@@ -134,9 +150,7 @@ const QuizPage = () => {
     }, []);
 
     if (isLoading) {
-        return (
-            <Loading />
-        );
+        return <Loading />;
     }
 
     if (errorMsg === 'anotherDomainInProgress' && domainInProg !== domain) {
@@ -148,7 +162,6 @@ const QuizPage = () => {
                     </h1>
                     <h3>
                         To attempt
-                        {' '}
                         {domain}
                         , you need to finish that first.
                     </h3>
@@ -157,7 +170,9 @@ const QuizPage = () => {
                         style={{
                             backgroundColor: '#F2A62C',
                         }}
-                        onClick={() => { window.location.href = `/quiz/${domainInProg}`; }}
+                        onClick={() => {
+                            window.location.href = `/quiz/${domainInProg}`;
+                        }}
                     >
                         Go back
                     </Button>
@@ -203,7 +218,9 @@ const QuizPage = () => {
                             <div
                                 className="align-self-center mr-3 p-2"
                                 style={{
-                                    backgroundColor: saved ? 'green' : '#f56531',
+                                    backgroundColor: saved
+                                        ? 'green'
+                                        : '#f56531',
                                     borderRadius: '8px',
                                 }}
                             >
@@ -229,7 +246,11 @@ const QuizPage = () => {
                                 {`Question ${currentQuestion}:`}
                             </b>
                             <br />
-                            {questions[currentQuestion - 1].question}
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: questions[currentQuestion - 1].question,
+                                }}
+                            />
                         </div>
                     </Row>
                     <Row>
@@ -242,7 +263,9 @@ const QuizPage = () => {
                                 id=""
                                 cols="30"
                                 rows="10"
-                                value={answers ? answers[currentQuestion - 1] : ''}
+                                value={
+                                    answers ? answers[currentQuestion - 1] : ''
+                                }
                                 onChange={handleChange}
                                 autoFocus
                             />
