@@ -15,7 +15,7 @@ jobs:
         CNAME: ccs.csivit.com
         FOLDER_NAME: build
         REACT_APP_ACCOUNTS_URL: ${{ secrets.REACT_APP_ACCOUNTS_URL }}
-        REACT_APP_BASE_URL: ${{ secrets.REACT_APP_ACCOUNTS_URL }}
+        REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
         REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
         REACT_APP_REDIRECT_URL: ${{ secrets.REACT_APP_REDIRECT_URL }}
       run: |
