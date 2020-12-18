@@ -158,10 +158,10 @@ const QuizPage = () => {
             <div className="d-flex justify-content-center h-100 align-items-center">
                 <div className="text-center">
                     <h1>
-                        {`The ${domainInProg} domain is already in progress.`}
+                        {`The ${domainInProg} domain is already in progress`}
                     </h1>
                     <h3>
-                        {`To attempt ${domain} you need to finish that first`}
+                        {`To attempt ${domain} you need to finish that first.`}
                     </h3>
                     <br />
                     <Button
