@@ -13,6 +13,7 @@ export const userSlice = createSlice({
         management: 'notAttempted',
         design: 'notAttempted',
         video: 'notAttempted',
+        currentDomain: undefined,
     },
     extraReducers: {
         [fetchDomainStatus.fulfilled]: (state, action) => {
@@ -37,9 +38,12 @@ export const userSlice = createSlice({
         endAttempt: (state, action) => {
             state[action.payload] = 'attempted';
         },
+        updateCurrentDomain: (state, action) => {
+            state.currentDomain = action.payload;
+        },
     },
 });
 
-export const { startAttempt, endAttempt } = userSlice.actions;
+export const { startAttempt, endAttempt, updateCurrentDomain } = userSlice.actions;
 
 export default userSlice.reducer;

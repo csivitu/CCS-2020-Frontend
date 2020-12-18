@@ -27,12 +27,13 @@ function useForceUpdate() {
 }
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const QuizPage = ({ domain }) => {
+const QuizPage = () => {
     const forceUpdate = useForceUpdate();
     const dispatch = useDispatch();
     const currentQuestion = useSelector((state) => state.quiz.currentQuestion);
     const answer = useSelector((state) => state.quiz.answer);
     const isLoading = useSelector((state) => state.quiz.isLoading);
+    const currentDomain = useSelector((state) => state.user.currentDomain);
 
     const hideNext = () => {
         if (currentQuestion === 10) {
@@ -62,7 +63,7 @@ const QuizPage = ({ domain }) => {
 
     const saveAnswers = () => {
         const responses = useSelector((state) => state.quiz.responses);
-        dispatch(sendResponsesAsync({ responses, domain }));
+        dispatch(sendResponsesAsync({ responses, domain: currentDomain }));
     };
 
     let timeout;
@@ -99,8 +100,8 @@ const QuizPage = ({ domain }) => {
     };
 
     useEffect(() => {
-        console.log('REACHED HERE ', domain);
-        dispatch(startQuizAsync({ domain: 'management' })).then(console.log);
+        console.log('REACHED HERE ', currentDomain);
+        dispatch(startQuizAsync({ domain: currentDomain })).then(console.log);
     }, []);
 
     const errorMsg = useSelector((state) => state.quiz.errorMsg);
@@ -161,7 +162,7 @@ const QuizPage = ({ domain }) => {
                             <h2>
                                 Domain:
                                 {' '}
-                                <b>{domain}</b>
+                                <b>{currentDomain}</b>
                             </h2>
                         </div>
 
