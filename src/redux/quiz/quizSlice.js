@@ -74,7 +74,7 @@ export const quizSlice = createSlice({
             }
         },
         [endAttemptReq.fulfilled]: (state) => {
-            state.timeEnded = new Date();
+            state.timeEnded = undefined;
             state.domainInProg = undefined;
             state.timeRemaining = 0;
         },

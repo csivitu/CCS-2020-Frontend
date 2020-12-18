@@ -9,11 +9,13 @@ import Logo from '../../components/logo';
 import illustration from '../../assets/LandingPage/illustration.svg';
 import Footer from '../../components/footer/footer.component';
 import Header from '../../components/header/header.component';
-// import Timer from '../../components/timer';
+import Timer from '../../components/timer';
 
 const LandingPage = (props) => {
     const history = useHistory();
-    const { loggedIn, notAllowed, verified } = props;
+    const {
+        loggedIn, notAllowed, verified, isCSI,
+    } = props;
     return (
         <>
             <Header />
@@ -73,8 +75,28 @@ const LandingPage = (props) => {
                                     return 'Please verify your email to continue.';
                                 }
                                 const r = () => {
-                                    if (loggedIn) {
+                                    if (loggedIn && isCSI) {
                                         history.push('/domains');
+                                        return '';
+                                    }
+                                    if (loggedIn) {
+                                        return (
+                                            <>
+                                                <h3 style={{ color: 'white' }}>
+                                                    You have registered successfully
+                                                </h3>
+                                                <br />
+                                                CCS Starts In
+                                                <br />
+                                                <Timer
+                                                    timeInDateFormat={
+                                                        +new Date(
+                                                            'Dec 19, 2020 02:00:00',
+                                                        )
+                                                    }
+                                                />
+                                            </>
+                                        );
                                     }
                                     return '';
                                 };
@@ -100,12 +122,14 @@ LandingPage.propTypes = {
     loggedIn: propTypes.bool,
     notAllowed: propTypes.bool,
     verified: propTypes.bool,
+    isCSI: propTypes.bool,
 };
 
 LandingPage.defaultProps = {
     loggedIn: false,
     notAllowed: false,
     verified: true,
+    isCSI: false,
 };
 
 export default LandingPage;
