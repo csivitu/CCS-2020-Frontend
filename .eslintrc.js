@@ -13,19 +13,18 @@ module.exports = {
     },
     plugins: ['react'],
     rules: {
-        indent: [
-            'error',
-            4,
-        ],
-        'react/jsx-indent-props': [
-            'error',
-            4,
-        ],
-        'react/jsx-indent': [
-            'error',
-            4,
-        ],
+        indent: ['error', 4],
+        'react/jsx-indent-props': ['error', 4],
+        'react/jsx-indent': ['error', 4],
         'no-console': 0,
         'no-underscore-dangle': 0,
     },
+    overrides: [
+        {
+            files: ['src/**/*Slice.js'],
+            rules: {
+                'no-param-reassign': 0,
+            },
+        },
+    ],
 };

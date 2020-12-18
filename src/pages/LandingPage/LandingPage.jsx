@@ -9,7 +9,7 @@ import Logo from '../../components/logo';
 import illustration from '../../assets/LandingPage/illustration.svg';
 import Footer from '../../components/footer/footer.component';
 import Header from '../../components/header/header.component';
-import Timer from '../../components/timer';
+// import Timer from '../../components/timer';
 
 const LandingPage = (props) => {
     const history = useHistory();
@@ -72,29 +72,15 @@ const LandingPage = (props) => {
                                 if (!verified) {
                                     return 'Please verify your email to continue.';
                                 }
-                                const r = loggedIn ? (
-                                    <>
-                                        <h3 style={{ color: 'white' }}>
-                                            You have registered successfully
-                                        </h3>
-                                        <br />
-                                        <br />
-                                        CCS Starts In
-                                        <br />
-                                        <Timer
-                                            timeInDateFormat={
-                                                +new Date(
-                                                    'Dec 19, 2020 00:00:00',
-                                                )
-                                            }
-                                        />
-                                    </>
-                                ) : (
-                                    ''
-                                );
+                                const r = () => {
+                                    if (loggedIn) {
+                                        history.push('/domains');
+                                    }
+                                    return '';
+                                };
                                 return notAllowed
                                     ? 'Registration failed! CCS by CSI-VIT is only for freshers.'
-                                    : r;
+                                    : r();
                             })()}
                         </b>
                     </h2>
