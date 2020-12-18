@@ -19,6 +19,7 @@ jobs:
         REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
         REACT_APP_REDIRECT_URL: ${{ secrets.REACT_APP_REDIRECT_URL }}
       run: |
+        unset CI
         npm ci
         npm run build
         echo $CNAME > build/CNAME
