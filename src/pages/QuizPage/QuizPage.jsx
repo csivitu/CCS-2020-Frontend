@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/no-autofocus */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { Button, Container, Row } from 'react-bootstrap';
+// import { unwrapResult } from '@reduxjs/toolkit';
 import {
     updateQuestionState,
     updateAnswer,
     updateSavedStatus,
     sendResponsesAsync,
     startQuizAsync,
+    updateQuestionAnswer,
 } from '../../redux/quiz/quizSlice';
 import { endAttempt } from '../../redux/user/userSlice';
 import csilogo from '../../assets/ComingSoonPage/csilogo.png';
@@ -19,21 +22,25 @@ import Footer from '../../components/footer/footer.component';
 import './QuizPage.styles.css';
 import ThankYouPage from '../ThankYouPage/ThankYouPage';
 
-// create your forceUpdate hook
-function useForceUpdate() {
-    // eslint-disable-next-line no-unused-vars
-    const [value, setValue] = useState(0); // integer state
-    return () => setValue((valueTemp) => valueTemp + 1); // update the state to force render
-}
+// // create your forceUpdate hook
+// function useForceUpdate() {
+//     // eslint-disable-next-line no-unused-vars
+//     const [value, setValue] = useState(0); // integer state
+//     return () => setValue((valueTemp) => valueTemp + 1); // update the state to force render
+// }
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const QuizPage = () => {
-    const forceUpdate = useForceUpdate();
     const dispatch = useDispatch();
     const currentQuestion = useSelector((state) => state.quiz.currentQuestion);
     const answer = useSelector((state) => state.quiz.answer);
     const isLoading = useSelector((state) => state.quiz.isLoading);
-    const currentDomain = useSelector((state) => state.user.currentDomain);
+    // const currentDomain = useSelector((state) => state.user.currentDomain);
+    const errorMsg = useSelector((state) => state.quiz.errorMsg);
+    const domainInProg = useSelector((state) => state.quiz.domainInProg);
+    const questions = useSelector((state) => state.quiz.questions);
+
+    const { domain } = useParams();
 
     const hideNext = () => {
         if (currentQuestion === 10) {
@@ -63,13 +70,12 @@ const QuizPage = () => {
 
     const saveAnswers = () => {
         const responses = useSelector((state) => state.quiz.responses);
-        dispatch(sendResponsesAsync({ responses, domain: currentDomain }));
+        dispatch(sendResponsesAsync({ responses, domain }));
     };
 
     let timeout;
 
     const handleAnswer = () => {
-        const questions = useSelector((state) => state.quiz.questions);
         if (!questions) return;
 
         clearTimeout(timeout);
@@ -78,9 +84,7 @@ const QuizPage = () => {
         }, 2000);
 
         dispatch(updateSavedStatus(false));
-        const ques = questions[currentQuestion - 1];
-        ques.response = answer;
-        forceUpdate();
+        dispatch(updateQuestionAnswer(answer, currentQuestion));
     };
 
     const handleChange = (e) => {
@@ -100,13 +104,12 @@ const QuizPage = () => {
     };
 
     useEffect(() => {
-        console.log('REACHED HERE ', domain);
-        dispatch(startQuizAsync({ domain: domain.toLowerCase() })).then(console.log);
+        dispatch(
+            startQuizAsync({
+                domain,
+            }),
+        );
     }, []);
-
-    const errorMsg = useSelector((state) => state.quiz.errorMsg);
-    const domainInProg = useSelector((state) => state.quiz.domainInProg);
-    const questions = useSelector((state) => state.quiz.questions);
 
     if (isLoading) {
         return (
@@ -162,7 +165,7 @@ const QuizPage = () => {
                             <h2>
                                 Domain:
                                 {' '}
-                                <b>{currentDomain}</b>
+                                <b>{domain}</b>
                             </h2>
                         </div>
 

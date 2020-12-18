@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import {
     sendResponses,
     startQuiz,
-    endQuiz,
+    // endQuiz,
 } from '../../api/requests';
 
 export const sendResponsesAsync = createAsyncThunk(
@@ -34,7 +34,7 @@ export const quizSlice = createSlice({
             }
         },
         [startQuizAsync.fulfilled]: (state, action) => {
-            let timer = null;
+            // const timer = null;
             console.log(action.payload);
             if (!action.payload.success) {
                 state.errorMsg = action.payload.message;
@@ -48,22 +48,23 @@ export const quizSlice = createSlice({
                     action.payload.time.timeEnded,
                 ).getTime();
                 const timeRemaining = timeEnded - Date.now();
-                timer = setInterval(() => {
-                    let t = state.timeRemaining - 500;
-                    if (t < 0) {
-                        t = 0;
-                        clearInterval(timer);
-                        endQuiz(action.payload.domain).then(() => {
-                            state.errorMsg = 'quizAlreadyAttempted';
-                            sendResponses({
-                                responses: state.questions,
-                                domain: action.payload.domain,
-                            });
-                        });
-                    }
-                    state.timeRemaining = t;
-                }, 500);
+                // timer = setInterval(() => {
+                //     let t = state.timeRemaining - 500;
+                //     if (t < 0) {
+                //         t = 0;
+                //         clearInterval(timer);
+                //         endQuiz(action.payload.domain).then(() => {
+                //             state.errorMsg = 'quizAlreadyAttempted';
+                //             sendResponses({
+                //                 responses: state.questions,
+                //                 domain: action.payload.domain,
+                //             });
+                //         });
+                //     }
+                //     state.timeRemaining = t;
+                // }, 500);
                 state.questions = action.payload.responses;
+                state.domainInProg = action.payload.domain;
                 state.timeStarted = timerStarted;
                 state.timeEnded = timeEnded;
                 state.timeRemaining = timeRemaining;
@@ -93,6 +94,12 @@ export const quizSlice = createSlice({
         updateSavedStatus: (state, action) => {
             state.savedStatus = action.payload;
         },
+        updateQuestionAnswer: (state, action) => {
+            // state.questions[action.payload.currentQuestion - 1] = action.payload.answer;
+            const { questions } = state;
+            questions[action.payload.currentQuestion - 1] = action.payload.answer;
+            state.questions = questions;
+        },
     },
 });
 
@@ -100,6 +107,7 @@ export const {
     updateQuestionState,
     updateAnswer,
     updateSavedStatus,
+    updateQuestionAnswer,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;

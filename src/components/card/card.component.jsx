@@ -1,15 +1,12 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Card, Col } from 'react-bootstrap';
-import { updateCurrentDomain } from '../../redux/user/userSlice';
 import './card.styles.css';
 
 const DomainCard = (props) => {
     const history = useHistory();
-    const dispatch = useDispatch();
     return (
         <Col
             xs={12}
@@ -20,9 +17,8 @@ const DomainCard = (props) => {
             <Card
                 className="card text-center"
                 onClick={() => {
-                    dispatch(updateCurrentDomain(props.domain));
                     history.push({
-                        pathname: '/quiz',
+                        pathname: `/quiz/${props.domain.toLowerCase()}`,
                     });
                 }}
             >

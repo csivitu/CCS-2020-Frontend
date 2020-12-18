@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api, { setAuthToken } from './api/api';
+import { updateLogin } from './redux/user/userSlice';
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
@@ -18,6 +20,10 @@ function App() {
     const [loggedIn, setLoggedIn] = useState(false);
     const [notAllowed, setNotAllowed] = useState(false);
     const [verified, setVerified] = useState(true);
+
+    const dispatch = useDispatch();
+
+    const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
     const logout = () => {
         localStorage.removeItem('token');
@@ -43,6 +49,7 @@ function App() {
         if (user.regNo.startsWith('20') || user.scope.indexOf('csi') > -1) {
             // store in redux
             setLoggedIn(true);
+            dispatch(updateLogin(true));
             return;
         }
 
@@ -72,21 +79,25 @@ function App() {
                     notAllowed={notAllowed}
                 />
             </Route>
-            <Route exact path="/domains">
-                <DomainPage />
-            </Route>
-            <Route exact path="/quiz">
-                <QuizPage />
-            </Route>
-            <Route exact path="/selections">
-                <SelectedPage />
-            </Route>
-            <Route exact path="/thankyou">
-                <ThankYouPage />
-            </Route>
-            <Route exact path="/slot">
-                <SlotPage />
-            </Route>
+            {isLoggedIn && (
+                <>
+                    <Route exact path="/domains">
+                        <DomainPage />
+                    </Route>
+                    <Route exact path="/quiz/:domain">
+                        <QuizPage />
+                    </Route>
+                    <Route exact path="/selections">
+                        <SelectedPage />
+                    </Route>
+                    <Route exact path="/thankyou">
+                        <ThankYouPage />
+                    </Route>
+                    <Route exact path="/slot">
+                        <SlotPage />
+                    </Route>
+                </>
+            )}
         </>
     );
 }
