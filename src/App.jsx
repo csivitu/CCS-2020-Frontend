@@ -10,6 +10,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import DomainPage from './pages/DomainPage';
 import QuizPage from './pages/QuizPage/QuizPage';
 import SlotPage from './pages/SlotPage/SlotPage';
+import RulesPage from './pages/RulesPage';
 // import Loading from './components/loading';
 
 import './App.css';
@@ -91,10 +92,13 @@ function App() {
                     isCSI={isCSI}
                 />
             </Route>
-            {isLoggedIn && isCSI && (
+            {isLoggedIn && (
                 <>
                     <Route exact path="/domains">
                         <DomainPage />
+                    </Route>
+                    <Route exact path="/rules">
+                        <RulesPage />
                     </Route>
                     <Route exact path="/quiz/:domain">
                         <QuizPage />

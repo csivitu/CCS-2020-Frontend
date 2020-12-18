@@ -14,7 +14,7 @@ import Timer from '../../components/timer';
 const LandingPage = (props) => {
     const history = useHistory();
     const {
-        loggedIn, notAllowed, verified, isCSI,
+        loggedIn, notAllowed, verified,
     } = props;
     return (
         <>
@@ -60,7 +60,7 @@ const LandingPage = (props) => {
                                         className="register"
                                         onClick={() => history.push('/login')}
                                     >
-                                        REGISTER
+                                        LOGIN
                                     </Button>
                                 )}
                             </div>
@@ -75,8 +75,9 @@ const LandingPage = (props) => {
                                     return 'Please verify your email to continue.';
                                 }
                                 const r = () => {
-                                    if (loggedIn && isCSI) {
-                                        history.push('/domains');
+                                    // put isCSI here
+                                    if (loggedIn) {
+                                        history.push('/rules');
                                         return '';
                                     }
                                     if (loggedIn) {
@@ -122,14 +123,14 @@ LandingPage.propTypes = {
     loggedIn: propTypes.bool,
     notAllowed: propTypes.bool,
     verified: propTypes.bool,
-    isCSI: propTypes.bool,
+    // isCSI: propTypes.bool,
 };
 
 LandingPage.defaultProps = {
     loggedIn: false,
     notAllowed: false,
     verified: true,
-    isCSI: false,
+    // isCSI: false,
 };
 
 export default LandingPage;

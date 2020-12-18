@@ -92,6 +92,10 @@ a:hover {
     }
 }
 
+pre {
+    color: white;
+}
+
 
 /* Works on Firefox */
 

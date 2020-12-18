@@ -9,6 +9,7 @@ export default function Logout() {
         localStorage.removeItem('token');
         dispatch(updateLogin(false));
         dispatch(setUsername(''));
+        window.location = '/';
     };
 
     useEffect(() => {
