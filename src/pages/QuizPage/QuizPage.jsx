@@ -100,7 +100,7 @@ const QuizPage = ({ domain }) => {
 
     useEffect(() => {
         console.log('REACHED HERE ', domain);
-        dispatch(startQuizAsync({ domain: 'management' })).then(console.log);
+        dispatch(startQuizAsync({ domain: domain.toLowerCase() })).then(console.log);
     }, []);
 
     const errorMsg = useSelector((state) => state.quiz.errorMsg);
