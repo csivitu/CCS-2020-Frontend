@@ -98,18 +98,17 @@ const QuizPage = () => {
         setTimeOut(
             setTimeout(() => {
                 const ques = JSON.parse(JSON.stringify(questions));
-                ques[currentQuestion - 1].response =
-                    answers[currentQuestion - 1];
+                ques[currentQuestion - 1].response = answers[currentQuestion - 1];
                 saveAnswers(ques);
 
                 dispatch(
                     updateQuestionAnswer({
                         answer: answers[currentQuestion - 1],
                         currentQuestion,
-                    })
+                    }),
                 );
                 setSaved(true);
-            }, 2000)
+            }, 2000),
         );
     };
 
@@ -138,7 +137,7 @@ const QuizPage = () => {
         dispatch(
             startQuizAsync({
                 domain,
-            })
+            }),
         )
             .then(unwrapResult)
             .then(({ responses }) => {
@@ -207,7 +206,9 @@ const QuizPage = () => {
                     <Row className="d-flex justify-content-between align-items-center flex-xs-column">
                         <div className="domain">
                             <h2>
-                                Domain: <b>{domain.toUpperCase()}</b>
+                                Domain:
+                                {' '}
+                                <b>{domain.toUpperCase()}</b>
                             </h2>
                         </div>
 
@@ -230,7 +231,7 @@ const QuizPage = () => {
                             />
                             <Countdown
                                 timeInSeconds={Math.floor(
-                                    (timeEnded - +new Date()).toString() / 1000
+                                    (timeEnded - +new Date()).toString() / 1000,
                                 )}
                                 onComplete={() => console.log('Time Over')}
                             />
@@ -304,7 +305,7 @@ const QuizPage = () => {
                             {numbers.map((number) => (
                                 <Button
                                     className={`question-button mx-2 ${viewStatus(
-                                        number
+                                        number,
                                     )}`}
                                     key={number}
                                     onClick={() => handleQuestionButton(number)}
