@@ -42,6 +42,10 @@ body {
     color: #f2a62c;
 }
 
+.yellow:hover {
+    color: #f6a21b;
+}
+
 .white {
     color: white;
 }
