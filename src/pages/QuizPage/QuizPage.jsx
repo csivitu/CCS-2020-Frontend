@@ -294,7 +294,7 @@ const QuizPage = () => {
                                 size="lg"
                                 onClick={handleSubmit}
                             >
-                                <b>SUBMIT</b>
+                                <b>SUBMIT QUIZ</b>
                             </Button>
                         ) : (
                             ''
