@@ -25,7 +25,7 @@ const RulesPage = () => (
                 <Row className="text-center mb-5">
                     <h1 className="w-100 yellow">GUIDELINES</h1>
                 </Row>
-                <Row className="d-flex flex-column">
+                <Row className="d-flex flex-column mx-4">
                     <div className="mb-2">
                         <h5>1. Once the Round 1 for a domain starts, the timer for 30 minutes keeps running in the background even if the page is closed.</h5>
                     </div>

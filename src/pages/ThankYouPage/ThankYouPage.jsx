@@ -32,6 +32,9 @@ const ThankYouPage = () => (
                     <h2 className="mb-3">Thank you for your submission</h2>
                     <h3>Stay tuned to get further updates</h3>
                 </Row>
+                <Row className="text-center d-flex flex-column">
+                    <h5>If you have not attemptted the domain and still are seeing this message, try refreshing the page</h5>
+                </Row>
             </Container>
         </div>
         <Footer />
