@@ -61,12 +61,13 @@ const SlotPage = () => {
     useEffect(() => {
         instance.get('/')
             .then((data) => {
+                setLoading(false);
+
                 if (!data.data.data) {
                     return;
                 }
                 dispatch(setSlotTime(`${data.data.data.day}, ${data.data.data.slot}`));
                 dispatch(setDiscordLink(data.data.data.inviteLink));
-                setLoading(false);
                 history.push('/selections');
             });
     });
