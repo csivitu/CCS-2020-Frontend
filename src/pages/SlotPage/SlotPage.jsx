@@ -17,9 +17,13 @@ import './SlotPage.styles.css';
 
 const instance = Axios.create({
     baseURL: 'https://slot-booking-system.csivit.com/',
-    headers: {
-        Authorization: localStorage.getItem('token'),
-    },
+});
+
+instance.interceptors.request.use((config) => {
+    const token = localStorage.getItem('token');
+    // eslint-disable-next-line no-param-reassign
+    config.headers.Authorization = token || '';
+    return config;
 });
 
 const SlotPage = () => {
@@ -70,7 +74,7 @@ const SlotPage = () => {
                 dispatch(setDiscordLink(data.data.data.inviteLink));
                 history.push('/selections');
             });
-    });
+    }, []);
 
     if (loading) {
         return <Loading />;
