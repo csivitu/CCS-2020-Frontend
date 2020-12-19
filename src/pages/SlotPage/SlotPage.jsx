@@ -8,6 +8,7 @@ import Footer from '../../components/footer/footer.component';
 import Logo from '../../components/logo/index';
 import SlotDateCard from '../../components/slotdatecard';
 import SlotTimeCard from '../../components/slottimecard';
+import Loading from '../../components/loading';
 import {
     setSlotTime,
     setDiscordLink,
@@ -28,6 +29,7 @@ const SlotPage = () => {
     const [date, setDate] = useState('');
     const [slot, setSlot] = useState('');
     const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const round2 = useSelector((state) => state.user.round2);
 
@@ -64,9 +66,14 @@ const SlotPage = () => {
                 }
                 dispatch(setSlotTime(`${data.data.data.day}, ${data.data.data.slot}`));
                 dispatch(setDiscordLink(data.data.data.inviteLink));
+                setLoading(false);
                 history.push('/selections');
             });
     });
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <>
