@@ -1,3 +1,4 @@
+import { nanoid } from '@reduxjs/toolkit';
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
@@ -5,13 +6,9 @@ import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import './styles.css';
 
-const renderTimes = (arr) => arr.map((time, i) => (
-    <option className="w-100 yellow text-center option my-3" value={i}>
-        {time}
-    </option>
-));
+const SlotTimeCard = (props) => {
+    const { setSlot, time } = props;
 
-const SlotTimeCard = () => {
     const times = [
         '11 AM - 12 PM',
         '2 PM - 3 PM',
@@ -21,6 +18,18 @@ const SlotTimeCard = () => {
         '6 PM - 7 PM',
         '7 PM - 8 PM',
     ];
+
+    const renderTimes = (arr) => arr.map((t) => (
+        <option
+            className="w-100 yellow text-center option my-3"
+            value={time}
+            key={nanoid()}
+            selected={time === t}
+        >
+            {t}
+        </option>
+    ));
+
     return (
         <Col
             xs={12}
@@ -31,7 +40,7 @@ const SlotTimeCard = () => {
             <Card className="slot-card-div text-center">
                 <Card.Body>
                     <Card.Title className="text-center card-slot-title">
-                        Choose TIME
+                        Choose Time
                     </Card.Title>
                     <Row className="times-div w-100 m-auto h-100">
                         <select
@@ -39,6 +48,7 @@ const SlotTimeCard = () => {
                             id="times"
                             className="w-100 h-75"
                             multiple
+                            onChange={(e) => setSlot(e.target.value)}
                         >
                             {renderTimes(times)}
                         </select>
