@@ -125,7 +125,7 @@ const QuizPage = () => {
         saveAnswers();
         dispatch(endAttempt(domain));
         dispatch(endAttemptReq(domain));
-        history.push('/');
+        history.push('/domains');
     };
 
     const viewStatus = (number) => {
@@ -158,12 +158,10 @@ const QuizPage = () => {
             <div className="d-flex justify-content-center h-100 align-items-center">
                 <div className="text-center">
                     <h1>
-                        {`The ${domainInProg} domain is already in progress.`}
+                        {`The ${domainInProg} domain is already in progress`}
                     </h1>
                     <h3>
-                        To attempt
-                        {domain}
-                        , you need to finish that first.
+                        {`To attempt ${domain} you need to finish that first.`}
                     </h3>
                     <br />
                     <Button
@@ -210,7 +208,7 @@ const QuizPage = () => {
                             <h2>
                                 Domain:
                                 {' '}
-                                <b>{domain}</b>
+                                <b>{domain.toUpperCase()}</b>
                             </h2>
                         </div>
 
@@ -248,7 +246,8 @@ const QuizPage = () => {
                             <br />
                             <div
                                 dangerouslySetInnerHTML={{
-                                    __html: questions[currentQuestion - 1].question,
+                                    __html:
+                                        questions[currentQuestion - 1].question,
                                 }}
                             />
                         </div>
@@ -289,13 +288,17 @@ const QuizPage = () => {
                             </Button>
                         </div>
 
-                        <Button
-                            className="submit-button px-3"
-                            size="lg"
-                            onClick={handleSubmit}
-                        >
-                            <b>SUBMIT</b>
-                        </Button>
+                        {currentQuestion === 10 ? (
+                            <Button
+                                className="submit-button px-3"
+                                size="lg"
+                                onClick={handleSubmit}
+                            >
+                                <b>END QUIZ</b>
+                            </Button>
+                        ) : (
+                            ''
+                        )}
                     </Row>
                     <Row className="d-flex question-button-container justify-content-around py-4">
                         <div className="question-numbers">

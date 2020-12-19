@@ -62,15 +62,18 @@ const LandingPage = (props) => {
                                     lot of projects and hackathons, to help push
                                     technology forward.
                                 </h4>
-                                {loggedIn || (
-                                    <Button
-                                        size="lg"
-                                        className="register"
-                                        onClick={() => history.push('/login')}
-                                    >
-                                        LOGIN
-                                    </Button>
-                                )}
+                                {loggedIn
+                                    || (localStorage.getItem('token') ? (
+                                        ''
+                                    ) : (
+                                        <Button
+                                            size="lg"
+                                            className="register"
+                                            onClick={() => history.push('/login')}
+                                        >
+                                            LOGIN
+                                        </Button>
+                                    ))}
                             </div>
                         </div>
                     </Col>
@@ -92,7 +95,8 @@ const LandingPage = (props) => {
                                         return (
                                             <>
                                                 <h3 style={{ color: 'white' }}>
-                                                    You have registered successfully
+                                                    You have registered
+                                                    successfully
                                                 </h3>
                                                 <br />
                                                 CCS Starts In

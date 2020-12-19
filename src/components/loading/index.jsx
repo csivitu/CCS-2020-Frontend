@@ -12,7 +12,7 @@ const Loading = () => (
         <div className="all">
             <Container className="h-100">
                 <Row className="text-center d-flex justify-content-center align-items-center w-100 h-100">
-                    <img src={loadinggif} className="text-center w-25" alt="LOADING..." />
+                    <img src={loadinggif} className="text-center loader" alt="LOADING..." />
                 </Row>
             </Container>
         </div>
