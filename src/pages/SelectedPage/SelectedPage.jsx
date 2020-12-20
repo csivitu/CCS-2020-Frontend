@@ -66,6 +66,9 @@ const SelectedPage = () => {
                             {' '}
                             <a href={discordLink} className="yellow">{discordLink}</a>
                         </h3>
+                        <h5 className="mx-auto w-100 text-center mb-4">
+                            Note: Only 1 discord account can use this link to join the server.
+                        </h5>
                         <a
                             href={discordLink}
                             className="m-auto"

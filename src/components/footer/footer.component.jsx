@@ -85,6 +85,9 @@ const Footer = () => (
                     </div>
                 </IconContext.Provider>
             </a>
+            <a href="mailto:askcsivit@gmail.com" style={{ color: 'white' }}>
+                askcsivit@gmail.com
+            </a>
         </div>
     </div>
 );
