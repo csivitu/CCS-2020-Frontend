@@ -187,7 +187,7 @@ const QuizPage = () => {
         <>
             <Header />
             <div className="all">
-                <Container className="d-flex flex-column justify-content-around">
+                <Container className="d-flex flex-column justify-content-around px-5 quiz-container">
                     <Row className="text-center">
                         <div className="mt-2 mb-5 mx-auto">
                             <a
