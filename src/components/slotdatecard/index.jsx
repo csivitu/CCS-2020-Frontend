@@ -6,7 +6,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 import './styles.css';
 
 const SlotDateCard = (props) => {
-    const { setDate } = props;
+    const { setDateWrap } = props;
 
     return (
         <Col
@@ -20,14 +20,16 @@ const SlotDateCard = (props) => {
                     <Card.Title className="text-center card-slot-title">
                         Choose Date
                     </Card.Title>
-                    <Row className="december w-100 yellow mx-auto my-4"><Col>December 2020</Col></Row>
+                    <Row className="december w-100 yellow mx-auto my-4">
+                        <Col>December 2020</Col>
+                    </Row>
                     <Row className="dates">
                         <Col className="date my-2">
                             <input
                                 id="20"
                                 type="radio"
                                 name="slot-date"
-                                onClick={() => setDate(20)}
+                                onClick={() => setDateWrap(20)}
                             />
                             <label htmlFor="20" className="date-text yellow">
                                 20
@@ -38,7 +40,7 @@ const SlotDateCard = (props) => {
                                 id="21"
                                 type="radio"
                                 name="slot-date"
-                                onClick={() => setDate(21)}
+                                onClick={() => setDateWrap(21)}
                             />
                             <label htmlFor="21" className="date-text yellow">
                                 21
@@ -49,7 +51,7 @@ const SlotDateCard = (props) => {
                                 id="22"
                                 type="radio"
                                 name="slot-date"
-                                onClick={() => setDate(22)}
+                                onClick={() => setDateWrap(22)}
                             />
                             <label htmlFor="22" className="date-text yellow">
                                 22
@@ -60,7 +62,7 @@ const SlotDateCard = (props) => {
                                 id="23"
                                 type="radio"
                                 name="slot-date"
-                                onClick={() => setDate(23)}
+                                onClick={() => setDateWrap(23)}
                             />
                             <label htmlFor="23" className="date-text yellow">
                                 23

@@ -13,6 +13,7 @@ import {
     setSlotTime,
     setDiscordLink,
 } from '../../redux/user/userSlice';
+import { setDateRedux } from '../../redux/slot/slotslice';
 import './SlotPage.styles.css';
 
 const instance = Axios.create({
@@ -36,6 +37,11 @@ const SlotPage = () => {
     const [loading, setLoading] = useState(true);
 
     const round2 = useSelector((state) => state.user.round2);
+
+    const setDateWrap = (dateok) => {
+        setDate(dateok);
+        dispatch(setDateRedux(dateok));
+    };
 
     if (!round2) {
         return <Redirect to="/" />;
@@ -101,7 +107,7 @@ const SlotPage = () => {
 
                     </Row>
                     <Row className="justify-content-around">
-                        <SlotDateCard setDate={setDate} />
+                        <SlotDateCard setDateWrap={setDateWrap} />
                         <SlotTimeCard setSlot={setSlot} />
                     </Row>
                     <Row className="text-center">

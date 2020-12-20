@@ -109,7 +109,7 @@ const QuizPage = () => {
         syncAnswers();
         dispatch(endAttempt(domain));
         dispatch(endAttemptReq(domain));
-        history.push('/domains');
+        history.push('/submitted');
     };
 
     const viewStatus = (number) => {
