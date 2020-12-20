@@ -19,6 +19,7 @@ import './App.css';
 import SelectedPage from './pages/SelectedPage/SelectedPage';
 import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
 import Logout from './pages/Logout';
+import SubmittedPage from './pages/SubmittedPage';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -108,6 +109,9 @@ function App() {
                 <>
                     <Route exact path="/domains">
                         <DomainPage />
+                    </Route>
+                    <Route exact path="/submitted">
+                        <SubmittedPage />
                     </Route>
                     <Route exact path="/rules">
                         <RulesPage />
