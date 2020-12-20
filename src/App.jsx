@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api, { setAuthToken } from './api/api';
-import { updateLogin, setUsername } from './redux/user/userSlice';
+import {
+    updateLogin, setUsername, setRegNo, setRound2,
+} from './redux/user/userSlice';
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
@@ -33,6 +35,8 @@ function App() {
         localStorage.removeItem('token');
         dispatch(updateLogin(false));
         dispatch(setUsername(''));
+        dispatch(setRegNo(''));
+        dispatch(setRound2(false));
         history.push('/');
     };
 
@@ -58,10 +62,18 @@ function App() {
         if (user.regNo.startsWith('20') || user.scope.indexOf('csi') > -1) {
             setLoggedIn(true);
             dispatch(updateLogin(true));
+            dispatch(setRegNo(user.regNo));
 
             if (user.scope.indexOf('csi') > -1) {
                 setIsCSI(true);
             }
+
+            if (user.scope.indexOf('r2') > -1) {
+                dispatch(setRound2(true));
+                return;
+            }
+
+            dispatch(setRound2(false));
             return;
         }
 
@@ -103,14 +115,14 @@ function App() {
                     <Route exact path="/quiz/:domain">
                         <QuizPage />
                     </Route>
+                    <Route exact path="/slot">
+                        <SlotPage />
+                    </Route>
                     <Route exact path="/selections">
                         <SelectedPage />
                     </Route>
                     <Route exact path="/thankyou">
                         <ThankYouPage />
-                    </Route>
-                    <Route exact path="/slot">
-                        <SlotPage />
                     </Route>
                     <Route exact path="/logout">
                         <Logout />

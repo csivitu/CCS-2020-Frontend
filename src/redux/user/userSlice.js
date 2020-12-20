@@ -16,6 +16,10 @@ export const userSlice = createSlice({
         currentDomain: undefined,
         isLoggedIn: false,
         username: '',
+        regNo: '',
+        round2: undefined,
+        slot: '',
+        discordLink: '',
     },
     extraReducers: {
         [fetchDomainStatus.fulfilled]: (state, action) => {
@@ -49,11 +53,24 @@ export const userSlice = createSlice({
         setUsername: (state, action) => {
             state.username = action.payload;
         },
+        setRegNo: (state, action) => {
+            state.regNo = action.payload;
+        },
+        setRound2: (state, action) => {
+            state.round2 = action.payload;
+        },
+        setSlotTime: (state, action) => {
+            state.slot = action.payload;
+        },
+        setDiscordLink: (state, action) => {
+            state.discordLink = action.payload;
+        },
     },
 });
 
 export const {
-    startAttempt, endAttempt, updateCurrentDomain, updateLogin, setUsername,
+    startAttempt, endAttempt, updateCurrentDomain, updateLogin, setUsername, setRegNo,
+    setRound2, setSlotTime, setDiscordLink,
 } = userSlice.actions;
 
 export default userSlice.reducer;

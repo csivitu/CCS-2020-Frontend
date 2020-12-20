@@ -4,6 +4,7 @@ import {
 } from 'react-bootstrap';
 import propTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './LandingPage.styles.css';
 import Logo from '../../components/logo';
 import illustration from '../../assets/LandingPage/illustration.svg';
@@ -13,7 +14,16 @@ import Timer from '../../components/timer';
 
 const LandingPage = (props) => {
     const history = useHistory();
-    const { loggedIn, notAllowed, verified } = props;
+    const {
+        loggedIn, notAllowed, verified,
+    } = props;
+    const round2 = useSelector((state) => state.user.round2);
+
+    if (round2) {
+        history.push('/slot');
+        return '';
+    }
+
     return (
         <>
             <Header />
@@ -77,7 +87,7 @@ const LandingPage = (props) => {
                                 }
                                 const r = () => {
                                     // put isCSI here
-                                    if (loggedIn) {
+                                    if (loggedIn && round2 === false) {
                                         history.push('/rules');
                                         return '';
                                     }
