@@ -42,7 +42,7 @@ const RulesPage = () => (
                         <h5>
                             5. To know more about our recruitment process
                             {' '}
-                            <a href="https://chat.whatsapp.com/Cwh9VDjGeWC5wRf84CwwID" target="_blank" rel="noreferrer" className="yellow">Join Here</a>
+                            <a href="https://chat.whatsapp.com/Eny13zZTB6fBZhmtDEQ1Uj" target="_blank" rel="noreferrer" className="yellow">Join Here</a>
                             .
                         </h5>
                     </div>
