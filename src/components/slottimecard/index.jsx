@@ -4,10 +4,12 @@ import { nanoid } from '@reduxjs/toolkit';
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import './styles.css';
 
 const SlotTimeCard = (props) => {
     const { setSlot, time } = props;
+    const date = useSelector((state) => state.slot.date);
 
     const times = [
         '11 AM - 12 PM',
@@ -19,16 +21,22 @@ const SlotTimeCard = (props) => {
         '7 PM - 8 PM',
     ];
 
-    const renderTimes = (arr) => arr.map((t) => (
-        <option
-            className="w-100 yellow text-center option my-3"
-            value={time}
-            key={nanoid()}
-            selected={time === t}
-        >
-            {t}
-        </option>
-    ));
+    const renderTimes = (arr) => {
+        let start = 0;
+        if (date && date === 20) {
+            start = 3;
+        }
+        return arr.slice(start).map((t) => (
+            <option
+                className="w-100 yellow text-center option my-3"
+                value={time}
+                key={nanoid()}
+                selected={time === t}
+            >
+                {t}
+            </option>
+        ));
+    };
 
     return (
         <Col
