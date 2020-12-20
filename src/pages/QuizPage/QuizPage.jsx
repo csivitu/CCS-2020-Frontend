@@ -6,7 +6,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import { Button, Container, Row } from 'react-bootstrap';
 import { unwrapResult } from '@reduxjs/toolkit';
 import {
-    updateQuestionAnswer,
     updateQuestionState,
     sendResponsesAsync,
     startQuizAsync,
@@ -89,40 +88,25 @@ const QuizPage = () => {
         dispatch(sendResponsesAsync({ responses: ques, domain }));
     };
 
-    const [timeOut, setTimeOut] = useState();
-
-    const handleAnswer = () => {
+    const syncAnswers = () => {
         if (!questions) return;
 
-        if (timeOut) clearTimeout(timeOut);
-        setTimeOut(
-            setTimeout(() => {
-                const ques = JSON.parse(JSON.stringify(questions));
-                ques[currentQuestion - 1].response = answers[currentQuestion - 1];
-                saveAnswers(ques);
+        const ques = JSON.parse(JSON.stringify(questions))
+            .map((q, i) => ({ ...q, response: answers[i] }));
+        saveAnswers(ques);
 
-                dispatch(
-                    updateQuestionAnswer({
-                        answer: answers[currentQuestion - 1],
-                        currentQuestion,
-                    }),
-                );
-                setSaved(true);
-            }, 2000),
-        );
+        setTimeout(() => setSaved(true), 5000);
     };
 
     const handleChange = (e) => {
-        const updatedAns = answers;
+        const updatedAns = [...answers];
         updatedAns[currentQuestion - 1] = e.target.value;
         setAnswers(updatedAns);
         setSaved(false);
-
-        handleAnswer();
     };
 
     const handleSubmit = () => {
-        saveAnswers();
+        syncAnswers();
         dispatch(endAttempt(domain));
         dispatch(endAttemptReq(domain));
         history.push('/submitted');
@@ -132,6 +116,18 @@ const QuizPage = () => {
         if (number === currentQuestion) return 'current';
         return '';
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (!saved) syncAnswers();
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [saved]);
+
+    useEffect(() => {
+        syncAnswers();
+    }, [currentQuestion]);
 
     useEffect(() => {
         dispatch(
@@ -233,7 +229,10 @@ const QuizPage = () => {
                                 timeInSeconds={Math.floor(
                                     (timeEnded - +new Date()).toString() / 1000,
                                 )}
-                                onComplete={() => console.log('Time Over')}
+                                onComplete={() => {
+                                    syncAnswers();
+                                    history.push('/thankyou');
+                                }}
                             />
                         </div>
                     </Row>
