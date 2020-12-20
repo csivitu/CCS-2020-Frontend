@@ -95,18 +95,18 @@ const QuizPage = () => {
             .map((q, i) => ({ ...q, response: answers[i] }));
         saveAnswers(ques);
 
-        setSaved(true);
+        setTimeout(() => setSaved(true), 5000);
     };
 
     const handleChange = (e) => {
-        const updatedAns = answers;
+        const updatedAns = [...answers];
         updatedAns[currentQuestion - 1] = e.target.value;
         setAnswers(updatedAns);
         setSaved(false);
     };
 
     const handleSubmit = () => {
-        saveAnswers();
+        syncAnswers();
         dispatch(endAttempt(domain));
         dispatch(endAttemptReq(domain));
         history.push('/domains');
@@ -123,7 +123,11 @@ const QuizPage = () => {
         }, 5000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [saved]);
+
+    useEffect(() => {
+        syncAnswers();
+    }, [currentQuestion]);
 
     useEffect(() => {
         dispatch(
@@ -225,7 +229,10 @@ const QuizPage = () => {
                                 timeInSeconds={Math.floor(
                                     (timeEnded - +new Date()).toString() / 1000,
                                 )}
-                                onComplete={() => console.log('Time Over')}
+                                onComplete={() => {
+                                    syncAnswers();
+                                    history.push('/thankyou');
+                                }}
                             />
                         </div>
                     </Row>

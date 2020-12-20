@@ -34,7 +34,7 @@ const ThankYouPage = () => (
                 </Row>
                 <Row className="text-center d-flex flex-column">
                     <h5>
-                        If you have not attemptted the domain and still are seeing this message,
+                        If you have not attempted the domain and still are seeing this message,
                         try refreshing the page
                     </h5>
                 </Row>
