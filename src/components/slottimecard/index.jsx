@@ -19,6 +19,7 @@ const SlotTimeCard = (props) => {
         '5 PM - 6 PM',
         '6 PM - 7 PM',
         '7 PM - 8 PM',
+        '8 PM - 9 PM',
     ];
 
     const renderTimes = (arr) => {
