@@ -33,7 +33,7 @@ const SlotPage = () => {
     const dispatch = useDispatch();
     const [date, setDate] = useState('');
     const [slot, setSlot] = useState('');
-    const [error, setError] = useState(false);
+    const [error, setError] = useState('');
     const [loading, setLoading] = useState(true);
 
     const round2 = useSelector((state) => state.user.round2);
@@ -51,7 +51,7 @@ const SlotPage = () => {
         console.log(regNo);
 
         if (!slot || !date) {
-            setError(true);
+            setError('You must select a date and time to reserve your slot!');
             return;
         }
 
@@ -64,6 +64,11 @@ const SlotPage = () => {
                     dispatch(setSlotTime(`${date} dec 2020, ${slot}`));
                     dispatch(setDiscordLink(data.inviteLink));
                     history.push('/selections');
+                    return;
+                }
+
+                if (data.message.includes('slot unavailable')) {
+                    setError(`The selected slot ${date} Dec 2020, ${slot} is full!`);
                 }
             });
     };
@@ -130,7 +135,7 @@ const SlotPage = () => {
                                         fontSize: '1.4rem',
                                     }}
                                 >
-                                    You must select a date and time to reserve your slot!
+                                    {error}
                                 </div>
                             </Row>
                         )
