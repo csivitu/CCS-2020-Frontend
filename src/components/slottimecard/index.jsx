@@ -11,7 +11,7 @@ const SlotTimeCard = (props) => {
     const { setSlot, time } = props;
     const date = useSelector((state) => state.slot.date);
 
-    const times = [
+    let times = [
         '11 AM - 12 PM',
         '2 PM - 3 PM',
         '3 PM - 4 PM',
@@ -20,6 +20,20 @@ const SlotTimeCard = (props) => {
         '6 PM - 7 PM',
         '7 PM - 8 PM',
     ];
+
+    if (new Date().getDate() >= 24) {
+        times = [
+            '11 AM - 12 PM',
+            '12 PM - 1 PM',
+            '2 PM - 3 PM',
+            '3 PM - 4 PM',
+            '4 PM - 5 PM',
+            '5 PM - 6 PM',
+            '6 PM - 7 PM',
+            '7 PM - 8 PM',
+            '8 PM - 9 PM',
+        ];
+    }
 
     const renderTimes = (arr) => {
         let start = 0;
@@ -31,7 +45,6 @@ const SlotTimeCard = (props) => {
                 className="w-100 yellow text-center option my-3"
                 value={time}
                 key={nanoid()}
-                selected={time === t}
             >
                 {t}
             </option>
