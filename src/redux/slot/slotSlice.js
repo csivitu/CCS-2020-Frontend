@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const slotSlice = createSlice({
-    name: 'user',
+    name: 'slot',
     initialState: {
         date: 0,
     },

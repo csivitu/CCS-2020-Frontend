@@ -13,7 +13,7 @@ import {
     setSlotTime,
     setDiscordLink,
 } from '../../redux/user/userSlice';
-import { setDateRedux } from '../../redux/slot/slotslice';
+import { setDateRedux } from '../../redux/slot/slotSlice';
 import './SlotPage.styles.css';
 
 const instance = Axios.create({

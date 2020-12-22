@@ -2,8 +2,11 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 import { Card, Col, Row } from 'react-bootstrap';
 import './styles.css';
+
+const dates = [21, 22, 23, 24, 25];
 
 const SlotDateCard = (props) => {
     const { setDateWrap } = props;
@@ -24,50 +27,25 @@ const SlotDateCard = (props) => {
                         <Col>December 2020</Col>
                     </Row>
                     <Row className="dates">
-                        <Col className="date my-2">
-                            <input
-                                id="20"
-                                type="radio"
-                                name="slot-date"
-                                onClick={() => setDateWrap(20)}
-                            />
-                            <label htmlFor="20" className="date-text yellow">
-                                20
-                            </label>
-                        </Col>
-                        <Col className="date my-2">
-                            <input
-                                id="21"
-                                type="radio"
-                                name="slot-date"
-                                onClick={() => setDateWrap(21)}
-                            />
-                            <label htmlFor="21" className="date-text yellow">
-                                21
-                            </label>
-                        </Col>
-                        <Col className="date my-2">
-                            <input
-                                id="22"
-                                type="radio"
-                                name="slot-date"
-                                onClick={() => setDateWrap(22)}
-                            />
-                            <label htmlFor="22" className="date-text yellow">
-                                22
-                            </label>
-                        </Col>
-                        <Col className="date my-2">
-                            <input
-                                id="23"
-                                type="radio"
-                                name="slot-date"
-                                onClick={() => setDateWrap(23)}
-                            />
-                            <label htmlFor="23" className="date-text yellow">
-                                23
-                            </label>
-                        </Col>
+                        {
+                            dates.map((date) => {
+                                if (new Date().getDate() > date) return <div key={nanoid()} />;
+
+                                return (
+                                    <Col className="date my-2" key={nanoid()}>
+                                        <input
+                                            id={date}
+                                            type="radio"
+                                            name="slot-date"
+                                            onClick={() => setDateWrap(date)}
+                                        />
+                                        <label htmlFor={date} className="date-text yellow">
+                                            {date}
+                                        </label>
+                                    </Col>
+                                );
+                            })
+                        }
                     </Row>
                 </Card.Body>
             </Card>
