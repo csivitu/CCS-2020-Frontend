@@ -26,6 +26,28 @@ const SlotDateCard = (props) => {
                     <Row className="dates">
                         <Col className="date my-2">
                             <input
+                                id="20"
+                                type="radio"
+                                name="slot-date"
+                                onClick={() => setDateWrap(20)}
+                            />
+                            <label htmlFor="20" className="date-text yellow">
+                                20
+                            </label>
+                        </Col>
+                        <Col className="date my-2">
+                            <input
+                                id="21"
+                                type="radio"
+                                name="slot-date"
+                                onClick={() => setDateWrap(21)}
+                            />
+                            <label htmlFor="21" className="date-text yellow">
+                                21
+                            </label>
+                        </Col>
+                        <Col className="date my-2">
+                            <input
                                 id="22"
                                 type="radio"
                                 name="slot-date"
@@ -44,17 +66,6 @@ const SlotDateCard = (props) => {
                             />
                             <label htmlFor="23" className="date-text yellow">
                                 23
-                            </label>
-                        </Col>
-                        <Col className="date my-2">
-                            <input
-                                id="23"
-                                type="radio"
-                                name="slot-date"
-                                onClick={() => setDateWrap(23)}
-                            />
-                            <label htmlFor="23" className="date-text yellow">
-                                24
                             </label>
                         </Col>
                     </Row>
