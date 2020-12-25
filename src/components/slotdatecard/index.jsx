@@ -6,7 +6,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import { Card, Col, Row } from 'react-bootstrap';
 import './styles.css';
 
-const dates = [21, 22, 23, 24, 25, 26];
+const dates = [21, 22, 23, 24, 25, 26, 27];
 
 const SlotDateCard = (props) => {
     const { setDateWrap } = props;
