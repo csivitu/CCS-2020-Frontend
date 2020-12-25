@@ -30,11 +30,11 @@ const ThankYouPage = () => (
                     <h1 className="w-100 yellow">CORE COMMITTEE SELECTIONS</h1>
                 </Row>
                 <Row className="text-center d-flex flex-column">
-                    <h2 className="mb-3">Thank you for your submission</h2>
-                    <h3>Stay tuned to get further updates</h3>
+                    <h2 className="mb-3">Round 1 has Ended</h2>
+                    <h3>Thank you for your submissions</h3>
                 </Row>
                 <Row className="text-center d-flex flex-column">
-                    <h5>If you have not attempted the domain and you are still seeing this message, try refreshing the page</h5>
+                    <h5>Stay tuned on our social media handles for further updates</h5>
                 </Row>
             </Container>
         </div>

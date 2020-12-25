@@ -88,7 +88,7 @@ const LandingPage = (props) => {
                                 const r = () => {
                                     // put isCSI here
                                     if (loggedIn && round2 === false) {
-                                        history.push('/rules');
+                                        history.push('/thankyou');
                                         return '';
                                     }
                                     if (loggedIn) {

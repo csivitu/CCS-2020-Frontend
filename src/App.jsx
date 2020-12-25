@@ -107,7 +107,7 @@ function App() {
             </Route>
             {isLoggedIn && (
                 <>
-                    <Route exact path="/domains">
+                    {/* <Route exact path="/domains">
                         <DomainPage />
                     </Route>
                     <Route exact path="/submitted">
@@ -118,7 +118,7 @@ function App() {
                     </Route>
                     <Route exact path="/quiz/:domain">
                         <QuizPage />
-                    </Route>
+                    </Route> */}
                     <Route exact path="/slot">
                         <SlotPage />
                     </Route>
