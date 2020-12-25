@@ -9,17 +9,17 @@ import {
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
-import DomainPage from './pages/DomainPage';
-import QuizPage from './pages/QuizPage/QuizPage';
+// import DomainPage from './pages/DomainPage';
+// import QuizPage from './pages/QuizPage/QuizPage';
 import SlotPage from './pages/SlotPage/SlotPage';
-import RulesPage from './pages/RulesPage';
+// import RulesPage from './pages/RulesPage';
 // import Loading from './components/loading';
 
 import './App.css';
 import SelectedPage from './pages/SelectedPage/SelectedPage';
 import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
 import Logout from './pages/Logout';
-import SubmittedPage from './pages/SubmittedPage';
+// import SubmittedPage from './pages/SubmittedPage';
 
 function App() {
     const [loggedIn, setLoggedIn] = useState(false);
