@@ -4,19 +4,22 @@ import { Route, useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api, { setAuthToken } from './api/api';
 import {
-    updateLogin, setUsername, setRegNo, setRound2,
+    updateLogin,
+    setUsername,
+    setRegNo,
+    setRound2,
 } from './redux/user/userSlice';
 import Token from './components/token';
 import Login from './components/login';
 import LandingPage from './pages/LandingPage/LandingPage';
 // import DomainPage from './pages/DomainPage';
 // import QuizPage from './pages/QuizPage/QuizPage';
-import SlotPage from './pages/SlotPage/SlotPage';
+// import SlotPage from './pages/SlotPage/SlotPage';
 // import RulesPage from './pages/RulesPage';
 // import Loading from './components/loading';
 
 import './App.css';
-import SelectedPage from './pages/SelectedPage/SelectedPage';
+// import SelectedPage from './pages/SelectedPage/SelectedPage';
 import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
 import Logout from './pages/Logout';
 // import SubmittedPage from './pages/SubmittedPage';
@@ -120,10 +123,10 @@ function App() {
                         <QuizPage />
                     </Route> */}
                     <Route exact path="/slot">
-                        <SlotPage />
+                        <ThankYouPage />
                     </Route>
                     <Route exact path="/selections">
-                        <SelectedPage />
+                        <ThankYouPage />
                     </Route>
                     <Route exact path="/thankyou">
                         <ThankYouPage />
