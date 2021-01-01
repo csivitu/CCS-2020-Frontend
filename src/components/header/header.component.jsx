@@ -7,12 +7,12 @@ const Header = () => {
     return (
         <div className="navbar-div d-flex align-items-center justify-content-between">
             <div className="right mx-5 my-auto d-flex justify-content-between align-items-center mx-5">
-                <a
+                {/* <a
                     href={username.length > 0 ? '/domains' : '/'}
                     className="mr-4"
                 >
-                    <h5 className="white link">HOME</h5>
-                </a>
+                    <h5 className="white link"></h5>
+                </a> */}
                 {username.length > 0 ? (
                     <a href="/rules">
                         <h5 className="white link">RULES</h5>
@@ -30,9 +30,7 @@ const Header = () => {
                         <h4>{username}</h4>
                     </>
                 ) : (
-                    <a href="/login">
-                        <h5 className="white link mr-3">LOGIN</h5>
-                    </a>
+                    ''
                 )}
             </div>
         </div>
